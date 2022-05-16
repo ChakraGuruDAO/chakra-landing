@@ -15,7 +15,7 @@ export const Features: React.FC<FeaturesProps> = ({}) => {
   return (
     <Box py="200px">
       <Container textAlign="center" mb="50px">
-        <Heading fontSize="4rem" fontWeight={500} lineHeight="120%">
+        <Heading fontSize="64px" fontWeight={500} lineHeight="120%">
           We&apos;re building the&nbsp;
           <Text as="span" color="brand.100">
             metaverse

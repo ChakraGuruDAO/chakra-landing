@@ -13,7 +13,7 @@ export const Boys: React.FC<BoysProps> = ({ startScroll = 0, endScroll }) => {
   };
 
   return (
-    <Box height={endScroll * 3 + "px"} bg="#06071F" overflow="hidden">
+    <Box height={endScroll * 3 + "px"} bg="dark.100" overflow="hidden">
       <Container justifyContent="space-between">
         <Parallax startScroll={0} translateY={[0, 200]} endScroll={900}>
           <Box maxWidth="370px">

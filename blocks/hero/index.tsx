@@ -9,9 +9,9 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useEffect, useRef, useState } from "react";
-
-import { Logo } from "../logo";
-import { Socials } from "../socials";
+import { Logo } from "components/logo";
+import { Socials } from "components/socials";
+import { Earth } from "components/earth";
 
 export const Hero = () => {
   return (
@@ -61,12 +61,13 @@ export const Hero = () => {
               AR-Metaverse
             </Text>
           </Heading>
-          <Text color="white" maxW="28rem">
+          <Text color="white" fontSize="20px" maxW="28rem">
             We are a decentralized autonomous organization whose mission is to
             aggregate existing realities. Let&apos;s build the metaverse by
             empowering people to be a part of it.
           </Text>
         </VStack>
+        <Earth />
       </Container>
     </Box>
   );

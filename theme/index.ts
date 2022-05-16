@@ -11,6 +11,12 @@ export default extendTheme({
     brand: {
       100: "#5A86F0",
     },
+    dark: {
+      100: "#06071F",
+    },
+    pink: {
+      100: "#D53F8C",
+    },
   },
   components,
 });

@@ -1,14 +1,27 @@
 import type { NextPage } from "next";
-import { Boys } from "../components/boys";
-import { Features } from "../components/features";
-import { Hero } from "../components/hero";
+import {
+  Boys,
+  Features,
+  Hero,
+  Token,
+  DAO,
+  Profit,
+  Team,
+  Footer,
+  PreSale,
+} from "blocks";
 
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
       <Features />
-      <Boys endScroll={900} />
+      <Token />
+      <Profit />
+      <DAO />
+      <Team />
+      <PreSale />
+      <Footer />
     </>
   );
 };
