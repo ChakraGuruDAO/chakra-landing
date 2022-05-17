@@ -1,26 +1,25 @@
 import { useEffect, useRef } from "react";
-import { Three } from "./three";
+import dynamic from "next/dynamic";
+
+const SceneDynamic = dynamic(() => import("./scene"), { ssr: false });
 
 export const Earth = () => {
-  const ref = useRef<HTMLDivElement>(null);
-  const threeRef = useRef<Three>(null);
-
-  useEffect(() => {
-    if (!threeRef.current && ref.current) {
-      // @ts-ignore
-      threeRef.current = new Three({
-        bgColor: "rgba(0,0,0,0.3)",
-        sceneSizes: { width: 500, height: 500 },
-        canvasContainer: ref.current,
-      });
-    }
-  }, []);
-
-  useEffect(() => {
-    if (threeRef.current) {
-      threeRef.current.render();
-    }
-  }, [threeRef]);
-
-  return <div ref={ref}></div>;
+  return (
+    <SceneDynamic
+      backgroundColor={0x06071f}
+      color="#ffffff"
+      rotate={true}
+      radius={14}
+      tube={200}
+      size={4}
+      radialSegments={600}
+      tubularSegments={12}
+      p={1}
+      q={4}
+      asParticles={true}
+      cameraX={-650}
+      cameraY={0}
+      cameraZ={0}
+    />
+  );
 };

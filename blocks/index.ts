@@ -1,4 +1,4 @@
-export * from "./boys";
+export * from "./nft";
 export * from "./features";
 export * from "./hero";
 export * from "./token";
@@ -7,3 +7,5 @@ export * from "./dao";
 export * from "./team";
 export * from "./footer";
 export * from "./pre-sale";
+export * from "./roadmap";
+export * from "./karma-tokenomic";

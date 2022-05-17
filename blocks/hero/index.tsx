@@ -18,8 +18,8 @@ export const Hero = () => {
     <Box
       position="relative"
       bgGradient="linear(161.64deg, #060622, #090913)"
-      py={50}
-      pb={200}
+      pt={50}
+      overflow="hidden"
     >
       <Box
         opacity={0.4}
@@ -36,6 +36,7 @@ export const Hero = () => {
         display="flex"
         flexDir="column"
         alignItems="center"
+        mb={{ base: "50px" }}
       >
         <HStack justifyContent="space-between" w="100%" mb="100px">
           <Link href="#">
@@ -67,8 +68,8 @@ export const Hero = () => {
             empowering people to be a part of it.
           </Text>
         </VStack>
-        <Earth />
       </Container>
+      <Earth />
     </Box>
   );
 };

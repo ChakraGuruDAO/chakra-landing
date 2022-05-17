@@ -48,7 +48,7 @@ export const PreSale = () => {
           >
             <HStack justifyContent="space-between" width="100%">
               <HStack>
-                <Img src="/pre-sale-chakra.svg" boxSize={{ base: "80px" }} />
+                <Img src="/chakra.svg" boxSize={{ base: "80px" }} />
                 <VStack alignItems="flex-start" spacing={0}>
                   <Text
                     color="#A0A0A0"
