@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import {
   AreaChart,
   Area,
@@ -103,6 +103,7 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
         >
           <CartesianGrid
             vertical={false}
+            height={90}
             strokeDasharray="10 10"
             stroke="rgba(169, 169, 169, 0.3)"
           />
@@ -112,21 +113,26 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             style={{
               fontFamily: "Inter, sans-serif",
             }}
-            fontSize="12px"
+            fontSize="10px"
             capHeight={20}
             xHeight={50}
+            tickCount={60}
+            interval={0}
           />
           <YAxis
             strokeWidth={0}
-            style={{
-              fontFamily: "Inter, sans-serif",
-            }}
+            tickMargin={0}
+            dy={-10}
+            tick={{ textAnchor: "start", dy: -5 }}
+            padding={{ bottom: 30 }}
+            domain={["auto", "auto"]}
+            tickCount={5}
             yAxisId="left"
             fontSize="12px"
             color="rgba(148, 148, 148, 1)"
             tickFormatter={(value: number) => value.toLocaleString()}
           />
-          <YAxis
+          {/* <YAxis
             strokeWidth={0}
             style={{
               fontFamily: "Inter, sans-serif",
@@ -137,23 +143,24 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             fontSize="12px"
             color="rgba(148, 148, 148, 1)"
             tickFormatter={(value: number) => value.toLocaleString()}
-          />
-          <Tooltip />
+          /> */}
+          {/* <Tooltip /> */}
           <Area
             type="linear"
             dataKey="Pre-sale"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(165, 165, 246, 1)"
-            fill="transparent"
+            label="Pre-sale"
+            stroke="rgba(90, 134, 240, 1)"
+            fill="rgba(90, 134, 240, 1)"
           />
           <Area
             type="linear"
             dataKey="NFT Launchpad"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(157, 234, 201, 1)"
-            fill="transparent"
+            stroke="rgba(213, 63, 140, 1)"
+            fill="rgba(213, 63, 140, 1)"
           />
           <Area
             type="linear"
@@ -161,23 +168,23 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             stackId="1"
             yAxisId="left"
             stroke="rgba(80, 239, 237, 1)"
-            fill="transparent"
+            fill="rgba(80, 239, 237, 1)"
           />
           <Area
             type="linear"
             dataKey="Liquidity"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(213, 63, 140, 1)"
-            fill="transparent"
+            stroke="rgba(180, 197, 255, 1)"
+            fill="rgba(180, 197, 255, 1)"
           />
           <Area
             type="linear"
             dataKey="Marketing"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(166, 187, 255, 1)"
-            fill="transparent"
+            stroke="rgba(135, 162, 250, 1)"
+            fill="rgba(135, 162, 250, 1)"
           />
           <Area
             type="linear"
@@ -185,47 +192,47 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             stackId="1"
             yAxisId="left"
             stroke="rgba(90, 134, 240, 1)"
-            fill="transparent"
+            fill="rgba(90, 134, 240, 1)"
           />
           <Area
             type="linear"
             dataKey="Partners & Advisors"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="transparent"
+            stroke="rgba(241, 241, 245, 1)"
+            fill="rgba(241, 241, 245, 1)"
           />
           <Area
             type="linear"
             dataKey="Team"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="transparent"
+            stroke="rgba(157, 234, 201, 1)"
+            fill="rgba(157, 234, 201, 1)"
           />
           <Area
             type="linear"
             dataKey="Bounty"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="transparent"
+            stroke="rgba(228, 111, 171, 1)"
+            fill="rgba(228, 111, 171, 1)"
           />
           <Area
             type="linear"
             dataKey="Reserve"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="transparent"
+            stroke="rgba(153, 179, 241, 1)"
+            fill="rgba(153, 179, 241, 1)"
           />
           <Area
             type="linear"
             dataKey="Ambassador program"
             stackId="1"
             yAxisId="left"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="transparent"
+            stroke="rgba(205, 205, 242, 1)"
+            fill="rgba(205, 205, 242, 1)"
           />
 
           {/* <Area

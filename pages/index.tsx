@@ -11,6 +11,7 @@ import {
   PreSale,
   Roadmap,
   KarmaTokenomic,
+  ChakraTokenomic,
 } from "blocks";
 import Script from "next/script";
 import Head from "next/head";
@@ -18,12 +19,6 @@ import Head from "next/head";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <script
-          type="text/javascript"
-          src="//static.sketchfab.com/api/sketchfab-viewer-1.12.0.js"
-        />
-      </Head>
       <Script
         type="text/javascript"
         strategy="beforeInteractive"
@@ -46,12 +41,13 @@ const Home: NextPage = () => {
       />
       <Script type="text/javascript" src="/earth.js" />
       <Hero />
-      <NFT />
       <Features />
+      <NFT />
       <Token />
       <Profit />
-      <DAO />
       <KarmaTokenomic />
+      <DAO />
+      <ChakraTokenomic />
       <Team />
       <Roadmap />
       <PreSale />

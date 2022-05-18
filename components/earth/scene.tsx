@@ -11,7 +11,7 @@ import * as THREE from "three";
 import { Controls } from "./controls";
 
 export interface SceneProps {
-  backgroundColor?: number;
+  backgroundColor?: string;
   color?: string;
   size?: number;
   radius?: number;
@@ -29,7 +29,7 @@ export interface SceneProps {
 }
 
 export default function Scene({
-  backgroundColor = 0x000000,
+  backgroundColor = "#000000",
   color = "#ffffff",
   rotate = true,
   size = 3,
@@ -45,7 +45,6 @@ export default function Scene({
   cameraZ = 50,
 }: SceneProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
-  const step = useRef(0);
   const _camera = useMemo(
     () =>
       new THREE.PerspectiveCamera(
@@ -68,7 +67,7 @@ export default function Scene({
   }, [_camera, cameraX, cameraY, cameraZ]);
 
   useEffect(() => {
-    _webGLRenderer.setClearColor(new THREE.Color(backgroundColor), 0);
+    _webGLRenderer.setClearColor(new THREE.Color(backgroundColor), 0.0);
     _webGLRenderer.setSize(window.innerWidth, window.innerHeight);
     _webGLRenderer.shadowMap.enabled = true;
   }, [_webGLRenderer, backgroundColor]);

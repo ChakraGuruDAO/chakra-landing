@@ -8,7 +8,6 @@ import {
   Link,
   Button,
 } from "@chakra-ui/react";
-import { useEffect, useRef, useState } from "react";
 import { Logo } from "components/logo";
 import { Socials } from "components/socials";
 import { Earth } from "components/earth";
@@ -18,7 +17,7 @@ export const Hero = () => {
     <Box
       position="relative"
       bgGradient="linear(161.64deg, #060622, #090913)"
-      pt={50}
+      pt={{ base: "20px" }}
       overflow="hidden"
     >
       <Box
@@ -36,9 +35,9 @@ export const Hero = () => {
         display="flex"
         flexDir="column"
         alignItems="center"
-        mb={{ base: "50px" }}
+        mb={{ base: "20px" }}
       >
-        <HStack justifyContent="space-between" w="100%" mb="100px">
+        <HStack justifyContent="space-between" w="100%" mb="20px">
           <Link href="#">
             <Logo />
           </Link>
@@ -46,7 +45,7 @@ export const Hero = () => {
           <Socials telegram="#" discord="#" twitter="#" />
         </HStack>
         <VStack textAlign="center" maxW="50rem">
-          <Button colorScheme="pink" variant="solid">
+          <Button colorScheme="pink" variant="solid" height={{ base: "30px" }}>
             Join the pre-sale
           </Button>
           <Heading
@@ -62,7 +61,7 @@ export const Hero = () => {
               AR-Metaverse
             </Text>
           </Heading>
-          <Text color="white" fontSize="20px" maxW="28rem">
+          <Text color="white" fontSize="20px" maxW={{ base: "560px" }}>
             We are a decentralized autonomous organization whose mission is to
             aggregate existing realities. Let&apos;s build the metaverse by
             empowering people to be a part of it.

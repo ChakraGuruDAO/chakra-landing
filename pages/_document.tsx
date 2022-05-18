@@ -10,6 +10,10 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head>
           <link rel="stylesheet" href="/global.css" />
+          <script
+            type="text/javascript"
+            src="//static.sketchfab.com/api/sketchfab-viewer-1.12.0.js"
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

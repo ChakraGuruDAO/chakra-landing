@@ -9,6 +9,7 @@ import {
   HStack,
   Img,
   Button,
+  Progress,
 } from "@chakra-ui/react";
 import dayjs from "dayjs";
 import { PreSaleLine } from "components/pre-sale-line";
@@ -41,7 +42,7 @@ export const PreSale = () => {
             alignItems="flex-start"
             borderRadius="20px"
             borderColor="brand.100"
-            borderWidth="1px"
+            borderWidth="2px"
             p="28px"
             spacing={{ base: "26px" }}
             divider={<StackDivider borderColor="#A0A0A0" />}
@@ -134,7 +135,13 @@ export const PreSale = () => {
                   </Text>
                 </VStack>
               </HStack>
-              <PreSaleLine value={20} />
+              {/* <PreSaleLine value={20} /> */}
+              <Progress
+                size="lg"
+                isIndeterminate
+                colorScheme="pink"
+                isAnimated
+              />
             </VStack>
 
             <HStack justifyContent="space-between" width="100%">

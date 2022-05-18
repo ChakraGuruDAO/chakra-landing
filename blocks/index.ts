@@ -9,3 +9,4 @@ export * from "./footer";
 export * from "./pre-sale";
 export * from "./roadmap";
 export * from "./karma-tokenomic";
+export * from "./chakra-tokenomic";

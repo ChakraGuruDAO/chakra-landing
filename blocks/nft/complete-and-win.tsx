@@ -12,11 +12,19 @@ import { Boys } from "components/boys";
 export const CompeteWin = () => {
   return (
     <Box bg="dark.100" position="relative" height={{ base: "600px" }}>
+      <Box
+        position="absolute"
+        height="100%"
+        width={{ base: "40%" }}
+        zIndex="overlay"
+        right="0"
+      ></Box>
       <Container display="flex" justifyContent="flex-end" alignItems="center">
         <Boys
           position="absolute"
           top="0"
           bottom="0"
+          width={{ base: "60%" }}
           height={{ base: "600px" }}
           left="0"
           right="0"

@@ -13,8 +13,8 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
         position="absolute"
         width={{ base: "320px" }}
         height={{ base: "110px" }}
-        borderLeft={{ base: "1px solid white" }}
-        borderBottom={{ base: "1px solid white" }}
+        borderLeft={{ base: "2px solid white" }}
+        borderBottom={{ base: "2px solid white" }}
         right="77%"
         top="25%"
         circleProps={{
@@ -28,8 +28,8 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
         position="absolute"
         width={{ base: "320px" }}
         height={{ base: "52px" }}
-        borderRight={{ base: "1px solid white" }}
-        borderTop={{ base: "1px solid white" }}
+        borderRight={{ base: "2px solid white" }}
+        borderTop={{ base: "2px solid white" }}
         left="77%"
         top="40%"
         textBlockProps={{

@@ -3,9 +3,9 @@ import { TokenomicGraph } from "components/tokenomic-graph";
 
 import data from "./data.json";
 
-export const KarmaTokenomic = () => {
+export const ChakraTokenomic = () => {
   return (
-    <Box bg="dark.100" py={{ base: "150px" }}>
+    <Box bg="dark.100" pt={{ base: "200px" }}>
       <Container>
         <VStack>
           <Heading
@@ -17,10 +17,10 @@ export const KarmaTokenomic = () => {
             alignItems="center"
           >
             Token&nbsp;
-            <Img display="inline-block" src="/karma.svg" boxSize="75px" />
+            <Img display="inline-block" src="/chakra.svg" boxSize="75px" />
             &nbsp;
             <Text color="brand.100" as="span">
-              KARMA
+              CHAKRA
             </Text>
             &nbsp;Distribution
           </Heading>

@@ -29,7 +29,9 @@ export const Boys: React.FC<BoysProps> = ({ ...props }) => {
         ui_fullscreen: 0,
         ui_annotations: 0,
         ui_theme: "dark",
+        camera: 0,
         dnt: 1,
+        autoplay: 1,
         autospin: 0.5,
         success: function onSuccess(api: any) {
           api.start();
@@ -53,7 +55,7 @@ export const Boys: React.FC<BoysProps> = ({ ...props }) => {
       allow="autoplay; fullscreen; xr-spatial-tracking"
       xr-spatial-tracking=""
       execution-while-out-of-viewport=""
-      execution-while-not-rendered
+      execution-while-not-rendered=""
       web-share=""
       allowFullScreen
       width="100%"

@@ -20,7 +20,7 @@ export const CatchCraft = () => {
     >
       <Container
         display="flex"
-        justifyContent="space-between"
+        justifyContent="space-around"
         alignItems="center"
       >
         <VStack alignItems="flex-start" maxWidth="370px">
