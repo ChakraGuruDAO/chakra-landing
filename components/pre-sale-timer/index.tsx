@@ -9,11 +9,11 @@ export interface PreSaleTimerProps extends React.ComponentProps<typeof HStack> {
 const Divider = (
   <Text
     color="brand.100"
-    fontSize={{ base: "64px" }}
+    fontSize={{ xl: "64px", md: "32px", base: "32px" }}
     lineHeight="100%"
     fontWeight={500}
     userSelect="none"
-    pb="45px"
+    pb={{ xl: "45px", md: "30px", base: "40px" }}
   >
     :
   </Text>
@@ -31,7 +31,7 @@ export const PreSaleTimer: React.FC<PreSaleTimerProps> = ({
     <HStack
       width="100%"
       alignItems="center"
-      spacing={{ base: "5px" }}
+      spacing={{ xl: "5px", md: "10px", base: "auto" }}
       {...props}
     >
       <TimerPart title="Day" value={days} />

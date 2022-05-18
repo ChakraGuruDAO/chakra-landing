@@ -11,37 +11,42 @@ import { Boys } from "components/boys";
 
 export const CompeteWin = () => {
   return (
-    <Box bg="dark.100" position="relative" height={{ base: "600px" }}>
+    <Box bg="dark.100" position="relative">
       <Box
         position="absolute"
         height="100%"
-        width={{ base: "40%" }}
+        width={{ xl: "40%", md: "50%" }}
         zIndex="overlay"
         right="0"
       ></Box>
-      <Container display="flex" justifyContent="flex-end" alignItems="center">
+      <Container
+        display="flex"
+        justifyContent={{ xl: "flex-end", md: "flex-start" }}
+        alignItems="center"
+        height={{ xl: "800px", md: "700px" }}
+      >
         <Boys
           position="absolute"
           top="0"
           bottom="0"
-          width={{ base: "60%" }}
-          height={{ base: "600px" }}
+          width={{ base: "100%" }}
+          height={{ base: "100%" }}
           left="0"
           right="0"
         />
         <VStack
-          maxWidth="370px"
+          maxWidth={{ base: "370px" }}
           justifySelf="center"
-          position={{ base: "absolute" }}
-          top={{ base: "50%" }}
-          transform={{ base: "translateY(-50%)" }}
+          // position={{ base: "absolute" }}
+          // top={{ base: "50%" }}
+          // transform={{ base: "translateY(-50%)" }}
           zIndex="overlay"
         >
           <Heading
-            color="white"
+            color={{ xl: "white", md: "brand.100" }}
             textTransform="uppercase"
             fontWeight={500}
-            fontSize="64px"
+            fontSize={{ xl: "64px", md: "46px" }}
             lineHeight="120%"
           >
             COMPETE AND WIN
@@ -49,6 +54,7 @@ export const CompeteWin = () => {
           <Text
             color="white"
             fontWeight={300}
+            fontSize={{ xl: "20px", md: "16px" }}
             lineHeight="150%"
             mb="24px!important"
           >
@@ -58,6 +64,7 @@ export const CompeteWin = () => {
           <Text
             color="white"
             fontWeight={300}
+            fontSize={{ xl: "20px", md: "16px" }}
             lineHeight="150%"
             mb="24px!important"
           >

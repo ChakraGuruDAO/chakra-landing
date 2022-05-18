@@ -11,6 +11,7 @@ import {
 import { Logo } from "components/logo";
 import { Socials } from "components/socials";
 import { Earth } from "components/earth";
+import { PRE_SALE_LINK } from "config/links";
 
 export const Hero = () => {
   return (
@@ -18,6 +19,7 @@ export const Hero = () => {
       position="relative"
       bgGradient="linear(161.64deg, #060622, #090913)"
       pt={{ base: "20px" }}
+      pb={{ xl: "617px", md: "500px", base: "500px" }}
       overflow="hidden"
     >
       <Box
@@ -33,11 +35,16 @@ export const Hero = () => {
         position="relative"
         zIndex={1}
         display="flex"
+        centerContent
         flexDir="column"
         alignItems="center"
-        mb={{ base: "20px" }}
+        mb={{ xl: "20px", md: "30px" }}
       >
-        <HStack justifyContent="space-between" w="100%" mb="20px">
+        <HStack
+          justifyContent="space-between"
+          w="100%"
+          mb={{ xl: "20px", lg: "20px", md: "60px", base: "100px" }}
+        >
           <Link href="#">
             <Logo />
           </Link>
@@ -45,23 +52,38 @@ export const Hero = () => {
           <Socials telegram="#" discord="#" twitter="#" />
         </HStack>
         <VStack textAlign="center" maxW="50rem">
-          <Button colorScheme="pink" variant="solid" height={{ base: "30px" }}>
+          <Button
+            as="a"
+            href={PRE_SALE_LINK}
+            colorScheme="pink"
+            variant="solid"
+            height={{ base: "30px" }}
+          >
             Join the pre-sale
           </Button>
           <Heading
             lineHeight="110%"
             as="h1"
-            fontSize="80px"
+            fontSize={{ xl: "80px", md: "60px", base: "36px" }}
             color="white"
             fontWeight={500}
             mb="20px"
           >
             Together, we build the&nbsp;
-            <Text as="span" color="brand.100">
+            <Text
+              as="span"
+              display={{ base: "block", sm: "block", lg: "inline" }}
+              color="brand.100"
+              wordBreak="break-word"
+            >
               AR-Metaverse
             </Text>
           </Heading>
-          <Text color="white" fontSize="20px" maxW={{ base: "560px" }}>
+          <Text
+            color="white"
+            fontSize={{ xl: "20px", md: "20px", base: "16px" }}
+            maxW={{ xl: "560px", base: "90%" }}
+          >
             We are a decentralized autonomous organization whose mission is to
             aggregate existing realities. Let&apos;s build the metaverse by
             empowering people to be a part of it.

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { useScrollParams } from "hooks/useScrollParams";
-import { Box } from "@chakra-ui/react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
+import { toPx } from "utils";
 
 const SceneDynamic = dynamic(() => import("./scene"), { ssr: false });
 
@@ -50,20 +51,40 @@ export const Earth = () => {
     ]
   );
 
+  const handleScroll = useCallback(
+    function (this: Window) {
+      const target = this;
+      const container = bodyRef.current;
+      const scrollY = target.scrollY;
+
+      if (container) {
+        const currentScrollY =
+          scrollY > (bodyRef.current?.scrollHeight || 1)
+            ? bodyRef.current?.scrollHeight
+            : window.scrollY;
+        const percent =
+          (currentScrollY || 0) / (bodyRef.current?.scrollHeight || 1);
+        onUpdateScroll(percent);
+      }
+    },
+    [onUpdateScroll, bodyRef]
+  );
+
   useEffect(() => {
-    window.onscroll = (e) => {
-      const currentScrollY =
-        window.scrollY > (bodyRef.current?.scrollHeight || 1)
-          ? bodyRef.current?.scrollHeight
-          : window.scrollY;
-      const percent =
-        (currentScrollY || 0) / (bodyRef.current?.scrollHeight || 1);
-      onUpdateScroll(percent);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, [onUpdateScroll]);
+  }, [handleScroll]);
 
   return (
-    <Box ref={bodyRef}>
+    <Box
+      ref={bodyRef}
+      position="absolute"
+      bottom="0"
+      height={{ xl: "100%", md: "100%" }}
+      paddingTop={{ xl: "200px", md: "200px", base: "300px" }}
+    >
       <SceneDynamic
         color="#ffffff"
         rotate={true}

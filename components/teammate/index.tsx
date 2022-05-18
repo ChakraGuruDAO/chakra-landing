@@ -41,13 +41,25 @@ export const Teammate: React.FC<TeammateProps> = ({
         </HStack>
       </Box>
       <VStack alignItems="flex-start">
-        <Text fontSize={{ base: "32px" }} fontWeight={600} color="white">
+        <Text
+          fontSize={{ xl: "32px", md: "24px", base: "20px" }}
+          fontWeight={600}
+          color="white"
+        >
           {name}
         </Text>
-        <Text fontSize={{ base: "24px" }} fontWeight={600} color="brand.100">
+        <Text
+          fontSize={{ xl: "24px", md: "20px", base: "16px" }}
+          fontWeight={600}
+          color="brand.100"
+        >
           {position}
         </Text>
-        <Text fontSize={{ base: "20px" }} fontWeight={300} color="white">
+        <Text
+          fontSize={{ xl: "20px", md: "16px", base: "16px" }}
+          fontWeight={300}
+          color="white"
+        >
           {description}
         </Text>
       </VStack>

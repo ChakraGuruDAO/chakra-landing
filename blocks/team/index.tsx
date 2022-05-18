@@ -17,13 +17,16 @@ export const Team = () => {
         <Text
           color="white"
           fontWeight={500}
-          fontSize="64px"
+          fontSize={{ xl: "64px", md: "46px", base: "28px" }}
           mt="50px"
           mb="32px"
         >
           Core team
         </Text>
-        <SimpleGrid columns={{ base: 4 }} spacing={{ base: "30px" }}>
+        <SimpleGrid
+          columns={{ xl: 4, md: 3, base: 2 }}
+          spacing={{ xl: "30px", md: "20px", base: "16px" }}
+        >
           <Teammate
             name="Yan Shevchenco"
             position="Chif Game Office"

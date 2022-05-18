@@ -20,7 +20,7 @@ export const Footer = () => {
           >
             <Heading
               color="white"
-              fontSize={{ base: "40px" }}
+              fontSize={{ xl: "40px", md: "32px" }}
               textTransform="uppercase"
             >
               Join our social networks
@@ -28,8 +28,9 @@ export const Footer = () => {
             <Text
               fontWeight={300}
               color="white"
-              fontSize={{ base: "20px" }}
+              fontSize={{ xl: "20px", md: "16px" }}
               maxW={{ base: "500px" }}
+              mb={{ xl: "20px!important" }}
             >
               Follow our metaverse, announcements, latest news and be aware of
               all the events.

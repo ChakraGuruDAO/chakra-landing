@@ -14,46 +14,57 @@ import {
 import dayjs from "dayjs";
 import { PreSaleLine } from "components/pre-sale-line";
 import { PreSaleTimer } from "components/pre-sale-timer";
+import { PRE_SALE_LINK } from "config/links";
 
 export const PreSale = () => {
   return (
-    <Box bg="white" py={{ base: "130px" }}>
+    <Box bg="white" py={{ md: "130px", base: "90px" }}>
       <Container>
-        <SimpleGrid columns={2} spacing={{ base: "30px" }}>
-          <VStack alignItems="flex-start">
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: "30px" }}>
+          <VStack alignItems={{ base: "center", md: "flex-start" }}>
             <Heading
               as="h1"
-              fontSize={{ base: "80px" }}
+              fontSize={{ xl: "80px", md: "60px", base: "36px" }}
               fontWeight={500}
               color="brand.100"
             >
               Pre-sale
             </Heading>
-            <Text fontSize={{ base: "20px" }} fontWeight={300} color="black">
+            <Text
+              textAlign={{ base: "center", md: "left" }}
+              fontSize={{ xl: "20px", md: "16px" }}
+              fontWeight={300}
+              color="black"
+              mb={{
+                xl: "20px!important",
+                md: "20px!important",
+                base: "20px!important",
+              }}
+            >
               The CHAKRA DAO offers two core pools. Variable locking for up to
               twelve months is available for MC and LP staking.
             </Text>
             <PreSaleTimer
-              mt={{ base: "54px!important" }}
+              mt={{ xl: "54px", md: "40px" }}
               expireOn={dayjs().add(1, "months").toDate()}
             />
           </VStack>
           <VStack
             alignItems="flex-start"
-            borderRadius="20px"
+            borderRadius={{ base: "20px", md: "20px" }}
             borderColor="brand.100"
             borderWidth="2px"
-            p="28px"
+            p={{ xl: "28px", md: "16px", base: "16px" }}
             spacing={{ base: "26px" }}
             divider={<StackDivider borderColor="#A0A0A0" />}
           >
             <HStack justifyContent="space-between" width="100%">
               <HStack>
-                <Img src="/chakra.svg" boxSize={{ base: "80px" }} />
+                <Img src="/chakra.svg" boxSize={{ base: "50px", md: "80px" }} />
                 <VStack alignItems="flex-start" spacing={0}>
                   <Text
                     color="#A0A0A0"
-                    fontSize={{ base: "16px" }}
+                    fontSize={{ xl: "16px", base: "12px" }}
                     fontWeight={400}
                   >
                     Token
@@ -63,16 +74,16 @@ export const PreSale = () => {
                     color="black"
                     fontWeight={600}
                     lineHeight="150%"
-                    fontSize={{ base: "28px" }}
+                    fontSize={{ xl: "28px", base: "20px" }}
                   >
                     Chakra
                   </Text>
                 </VStack>
               </HStack>
-              <VStack alignItems="flex-end" spacing="0">
+              <VStack textAlign="right" alignItems="flex-end" spacing="0">
                 <Text
                   color="#A0A0A0"
-                  fontSize={{ base: "16px" }}
+                  fontSize={{ xl: "16px", base: "12px" }}
                   fontWeight={400}
                 >
                   Price
@@ -82,13 +93,14 @@ export const PreSale = () => {
                   color="black"
                   fontWeight={600}
                   lineHeight="150%"
-                  fontSize={{ base: "28px" }}
+                  fontSize={{ xl: "28px", base: "20px" }}
                 >
                   $0.1
                 </Text>
                 <Text
                   color="#A0A0A0"
-                  fontSize={{ base: "16px" }}
+                  textAlign="right"
+                  fontSize={{ xl: "16px", base: "12px" }}
                   fontWeight={400}
                 >
                   0.00124 AVAX
@@ -101,7 +113,7 @@ export const PreSale = () => {
                 <VStack alignItems="flex-start" spacing={0}>
                   <Text
                     color="#A0A0A0"
-                    fontSize={{ base: "16px" }}
+                    fontSize={{ xl: "16px", base: "12px" }}
                     fontWeight={400}
                   >
                     Pre-sale
@@ -111,7 +123,7 @@ export const PreSale = () => {
                     color="black"
                     fontWeight={600}
                     lineHeight="150%"
-                    fontSize={{ base: "20px" }}
+                    fontSize={{ xl: "20px", base: "16px" }}
                   >
                     COMING SOON
                   </Text>
@@ -119,7 +131,7 @@ export const PreSale = () => {
                 <VStack alignItems="flex-end" spacing="0">
                   <Text
                     color="#A0A0A0"
-                    fontSize={{ base: "16px" }}
+                    fontSize={{ xl: "16px", base: "12px" }}
                     fontWeight={400}
                   >
                     Time left
@@ -129,7 +141,7 @@ export const PreSale = () => {
                     color="black"
                     fontWeight={600}
                     lineHeight="150%"
-                    fontSize={{ base: "20px" }}
+                    fontSize={{ xl: "20px", base: "16px" }}
                   >
                     SALE ENDED
                   </Text>
@@ -148,7 +160,7 @@ export const PreSale = () => {
               <VStack alignItems="flex-start" spacing={0}>
                 <Text
                   color="#A0A0A0"
-                  fontSize={{ base: "16px" }}
+                  fontSize={{ xl: "16px", base: "12px" }}
                   fontWeight={400}
                 >
                   Token Distribution
@@ -158,7 +170,7 @@ export const PreSale = () => {
                   color="black"
                   fontWeight={600}
                   lineHeight="150%"
-                  fontSize={{ base: "20px" }}
+                  fontSize={{ xl: "20px", base: "16px" }}
                 >
                   10,000,000
                 </Text>
@@ -166,7 +178,7 @@ export const PreSale = () => {
               <VStack alignItems="flex-end" spacing="0">
                 <Text
                   color="#A0A0A0"
-                  fontSize={{ base: "16px" }}
+                  fontSize={{ xl: "16px", base: "12px" }}
                   fontWeight={400}
                 >
                   Total Raised
@@ -176,13 +188,15 @@ export const PreSale = () => {
                   color="black"
                   fontWeight={600}
                   lineHeight="150%"
-                  fontSize={{ base: "20px" }}
+                  fontSize={{ xl: "20px", base: "16px" }}
                 >
                   $1280,320,19
                 </Text>
               </VStack>
             </HStack>
-            <Button variant="pre-sale">Pre-sale</Button>
+            <Button as="a" href={PRE_SALE_LINK} variant="pre-sale">
+              Pre-sale
+            </Button>
           </VStack>
         </SimpleGrid>
       </Container>

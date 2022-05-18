@@ -1,4 +1,5 @@
 // once everything is loaded, we run our Three.js stuff.
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import {
   useCallback,
   useEffect,
@@ -7,7 +8,9 @@ import {
   useRef,
   useLayoutEffect,
 } from "react";
+import { useWindowSize } from "react-use";
 import * as THREE from "three";
+import { toPx } from "utils";
 import { Controls } from "./controls";
 
 export interface SceneProps {
@@ -45,15 +48,10 @@ export default function Scene({
   cameraZ = 50,
 }: SceneProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
+  const { width } = useWindowSize(window.innerWidth, window.innerHeight);
   const _camera = useMemo(
-    () =>
-      new THREE.PerspectiveCamera(
-        45,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000
-      ),
-    []
+    () => new THREE.PerspectiveCamera(100, width / 1536, 0.1, 1000),
+    [width]
   );
   const _scene = useMemo<THREE.Scene>(() => new THREE.Scene(), []);
   const _webGLRenderer = useMemo(() => new THREE.WebGLRenderer(), []);
@@ -116,5 +114,15 @@ export default function Scene({
     }
   }, [_webGLRenderer, _controls, render]);
 
-  return <div ref={canvasRef}></div>;
+  return (
+    <Box
+      sx={{
+        canvas: {
+          height: { xl: "100%!important", md: "100%" },
+        },
+      }}
+      height={{ xl: "100%", md: "100%" }}
+      ref={canvasRef}
+    />
+  );
 }

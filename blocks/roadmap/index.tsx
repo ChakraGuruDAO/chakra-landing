@@ -17,7 +17,7 @@ export const Roadmap = () => {
           as="h2"
           textAlign="center"
           color="white"
-          fontSize={{ base: "64px" }}
+          fontSize={{ xl: "64px", md: "46px" }}
           fontWeight={500}
           mb="64px"
         >

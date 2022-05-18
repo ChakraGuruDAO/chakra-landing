@@ -13,8 +13,8 @@ export const CatchCraft = () => {
   return (
     <Box
       bg="dark.100"
-      pt="140px"
-      pb="68px"
+      pt={{ xl: "140px", md: "100px", base: "60px" }}
+      pb={{ xl: "68px", md: "100px", base: "60px" }}
       position="relative"
       overflow="hidden"
     >
@@ -22,13 +22,21 @@ export const CatchCraft = () => {
         display="flex"
         justifyContent="space-around"
         alignItems="center"
+        flexDirection={{ base: "column", md: "row" }}
       >
-        <VStack alignItems="flex-start" maxWidth="370px">
+        <VStack
+          alignItems="flex-start"
+          maxWidth={{ xl: "370px", md: "270px", base: "100%" }}
+          mb={{ base: "60px", md: 0 }}
+        >
           <Heading
             color="white"
             textTransform="uppercase"
             fontWeight={500}
-            fontSize="64px"
+            mb={{ base: "20px", md: "0" }}
+            width={{ base: "100%", md: "initial" }}
+            textAlign={{ base: "center", md: "left" }}
+            fontSize={{ xl: "64px", md: "40px", base: "28px" }}
             lineHeight="120%"
           >
             CATCHING AND CRAFT
@@ -36,6 +44,7 @@ export const CatchCraft = () => {
           <Text
             color="white"
             fontWeight={300}
+            fontSize={{ xl: "20px", md: "16px" }}
             lineHeight="150%"
             mb="24px!important"
           >
@@ -45,22 +54,27 @@ export const CatchCraft = () => {
           <Text
             color="white"
             fontWeight={300}
+            fontSize={{ xl: "20px", md: "16px" }}
             lineHeight="150%"
             mb="24px!important"
           >
             While modifying the metaverse with the Karma dApp, hunt for rare
             ar-nft characters and keep moving 2 earn
           </Text>
-          <Button as="a" href="/Hex_Witcher.usdz">
+          <Button alignSelf="center" as="a" href="/Hex_Witcher.usdz">
             Try a meta-verse
           </Button>
         </VStack>
-        <Box w={{ base: "346px" }} h={{ base: "700px" }} position="relative">
+        <VStack
+          w={{ xl: "346px", md: "300px", base: "250px" }}
+          h={{ xl: "700px", md: "500px", base: "450px" }}
+          position="relative"
+        >
           <Box
-            top="-17px"
-            bottom="-19px"
-            left="0px"
-            right="8px"
+            top={{ xl: "-5px", md: "-6px", base: "3px" }}
+            bottom={{ xl: "0px", md: "-15px", base: "0px" }}
+            left={{ xl: "4px", md: "20px", base: "15px" }}
+            right={{ xl: "3px", md: "5px", base: "10px" }}
             zIndex="overlay"
             position="absolute"
             backgroundImage="url(/iphone-frame.png)"
@@ -77,13 +91,13 @@ export const CatchCraft = () => {
               maskSize: "150%",
             }}
             autoPlay
-            w={{ base: "337px" }}
-            h={{ base: "655px" }}
+            w={{ xl: "337px", md: "229px", base: "200px" }}
+            h={{ md: "500px", xl: "655px", base: "445px" }}
             loop
             muted
             src="/ar.mp4"
           />
-        </Box>
+        </VStack>
       </Container>
       <Circle
         bg="brand.100"
@@ -91,6 +105,7 @@ export const CatchCraft = () => {
         filter="blur(900px)"
         position="absolute"
         bottom="-100px"
+        zIndex="-100"
         left="-100px"
       />
     </Box>

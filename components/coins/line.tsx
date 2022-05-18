@@ -21,9 +21,10 @@ export const Line: React.FC<LineProps> = ({
       <VStack
         textAlign="left"
         alignItems="flex-start"
-        width="fit-content"
+        width="max-content"
         position="absolute"
-        right="150%"
+        flexWrap="nowrap"
+        right={{ xl: "150%", md: "200%" }}
         transform="translate(145%)"
         bottom="100%"
         {...textBlockProps}
@@ -33,13 +34,13 @@ export const Line: React.FC<LineProps> = ({
           fontWeight={500}
           textTransform="uppercase"
           color="white"
-          fontSize="2.5rem"
+          fontSize={{ xl: "40px", md: "40px" }}
           lineHeight="120%"
         >
           {title}
         </Heading>
         <Text
-          fontSize="1.25rem"
+          fontSize={{ xl: "20px", md: "20px" }}
           fontWeight={300}
           color="white"
           mt="0px !important"

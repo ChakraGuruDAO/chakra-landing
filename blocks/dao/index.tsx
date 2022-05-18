@@ -10,7 +10,7 @@ export const DAO = () => {
           color="black"
           textAlign="center"
           lineHeight="100%"
-          fontSize={{ base: "110px" }}
+          fontSize={{ xl: "110px", md: "64px" }}
           mb="50px"
         >
           <Text fontWeight={400}>Decentralized.</Text>

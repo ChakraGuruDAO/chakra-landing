@@ -10,14 +10,19 @@ export const KarmaTokenomic = () => {
         <VStack>
           <Heading
             as="h2"
-            fontSize={{ base: "64px" }}
+            fontSize={{ xl: "64px", md: "40px" }}
             fontWeight={500}
             color="white"
             display="flex"
             alignItems="center"
+            mb={{ xl: "70px", md: "70px" }}
           >
             Token&nbsp;
-            <Img display="inline-block" src="/karma.svg" boxSize="75px" />
+            <Img
+              display="inline-block"
+              src="/karma.svg"
+              boxSize={{ xl: "75px", md: "64px" }}
+            />
             &nbsp;
             <Text color="brand.100" as="span">
               KARMA

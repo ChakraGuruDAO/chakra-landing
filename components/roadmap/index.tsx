@@ -93,7 +93,7 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
   return (
     <VStack
       position="relative"
-      maxW={{ base: "80%" }}
+      maxW={{ xl: "80%", md: "100%" }}
       margin="0 auto"
       ref={ref}
     >
@@ -106,15 +106,25 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
           >
             <RoadmapCircle />
 
-            <Box bg="black" borderRadius="20px" p="20px">
+            <Box
+              bg="black"
+              borderRadius="20px"
+              p="20px"
+              maxW={{ xl: "330px", md: "264px" }}
+            >
               <Text
                 color="brand.100"
                 fontWeight={600}
-                fontSize={{ base: "24px" }}
+                fontSize={{ xl: "24px", md: "20px" }}
               >
                 {item.title}
               </Text>
-              <Box marginLeft={{ base: "10px" }}>{item.content}</Box>
+              <Box
+                marginLeft={{ base: "10px" }}
+                fontSize={{ xl: "20px", md: "16px" }}
+              >
+                {item.content}
+              </Box>
             </Box>
           </Box>
         );

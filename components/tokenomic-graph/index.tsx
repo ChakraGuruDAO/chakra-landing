@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, useBreakpointValue } from "@chakra-ui/react";
 import {
   AreaChart,
   Area,
@@ -87,8 +87,14 @@ export interface TokenomicGraphProps {
 }
 
 export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
+  // const xTicksCount = useBreakpointValue({ xl: 60, md: 60 / 5 });
+  const xInterval = useBreakpointValue({ xl: 0, md: 5 });
+
   return (
-    <Box width={{ base: "1170px" }} height={{ base: "500px" }}>
+    <Box
+      width={{ xl: "1170px", md: "620px" }}
+      height={{ xl: "500px", md: "350px" }}
+    >
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart
           width={500}
@@ -116,8 +122,8 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             fontSize="10px"
             capHeight={20}
             xHeight={50}
-            tickCount={60}
-            interval={0}
+            // tickCount={xTicksCount}
+            interval={xInterval}
           />
           <YAxis
             strokeWidth={0}
