@@ -61,7 +61,11 @@ export const CatchCraft = () => {
             While modifying the metaverse with the Karma dApp, hunt for rare
             ar-nft characters and keep moving 2 earn
           </Text>
-          <Button alignSelf="center" as="a" href="/Hex_Witcher.usdz">
+          <Button
+            alignSelf={{ base: "center", lg: "flex-start" }}
+            as="a"
+            href="/Hex_Witcher.usdz"
+          >
             Try a meta-verse
           </Button>
         </VStack>

@@ -9,19 +9,40 @@ export const DAOCard: React.FC<DAOCardProps> = () => {
       borderRadius="20px"
       bg="pink.100"
       px="32px"
-      height={{ xl: "470px", md: "300px" }}
+      height={{ xl: "470px", md: "300px", base: "469px" }}
       display="flex"
-      alignItems="center"
-      backgroundImage="url(/dao-bg.svg)"
+      alignItems={{
+        base: "space-around",
+        md: "center",
+      }}
+      backgroundImage={{
+        base: "url(/dao-bg-base.svg)",
+        md: "url(/dao-bg.svg)",
+      }}
       backgroundRepeat="no-repeat"
-      backgroundPosition="top 100% right -36%"
+      backgroundPosition={{
+        base: "bottom -2px left 0",
+        md: "top 100% right -36%",
+      }}
+      padding={{
+        base: "35px",
+        md: undefined,
+      }}
       backgroundSize={{ xl: "50%", md: "60%" }}
     >
-      <SimpleGrid columns={2}>
-        <VStack textAlign="center">
+      <SimpleGrid
+        columns={{
+          base: 1,
+          md: 2,
+        }}
+      >
+        <VStack
+          textAlign="center"
+          alignSelf={{ base: "flex-start", md: undefined }}
+        >
           <Text
             color="white"
-            fontSize={{ xl: "64px", md: "32px" }}
+            fontSize={{ xl: "64px", md: "32px", base: "28px" }}
             fontWeight={500}
           >
             DAO
@@ -29,8 +50,8 @@ export const DAOCard: React.FC<DAOCardProps> = () => {
           <Text
             color="white"
             fontWeight={300}
-            fontSize={{ xl: "20px", md: "16px" }}
-            marginBottom={{ xl: "50px", md: "0px" }}
+            fontSize={{ xl: "20px", base: "16px" }}
+            marginBottom={{ xl: "50px", base: "0px" }}
           >
             Through ownership and rewarding merit, metaverse are now governed by
             the players. Innovative MetaFi economics reward avatars for their

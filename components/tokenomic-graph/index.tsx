@@ -9,6 +9,7 @@ import {
   ResponsiveContainer,
   ZAxis,
 } from "recharts";
+import { Pies } from "./pies";
 
 const data = [
   {
@@ -88,57 +89,62 @@ export interface TokenomicGraphProps {
 
 export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
   // const xTicksCount = useBreakpointValue({ xl: 60, md: 60 / 5 });
-  const xInterval = useBreakpointValue({ xl: 0, md: 5 });
+  const xInterval = useBreakpointValue({ xl: 0, md: 5, base: 5 });
+  const yTickMargin = useBreakpointValue({ base: 50, md: 0 });
+  const yFontSize = useBreakpointValue({ base: "8px", md: "12px" });
 
   return (
-    <Box
-      width={{ xl: "1170px", md: "620px" }}
-      height={{ xl: "500px", md: "350px" }}
-    >
-      <ResponsiveContainer width="100%" height="100%">
-        <AreaChart
-          width={500}
-          height={400}
-          data={items}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid
-            vertical={false}
-            height={90}
-            strokeDasharray="10 10"
-            stroke="rgba(169, 169, 169, 0.3)"
-          />
-          <XAxis
-            dataKey="month"
-            stroke="white"
-            style={{
-              fontFamily: "Inter, sans-serif",
+    <>
+      <Box width="100%" mb={{ base: "40px!important" }}>
+        <Pies />
+      </Box>
+      <Box
+        width={{ xl: "1170px", md: "620px", base: "343px" }}
+        height={{ xl: "500px", md: "350px", base: "220px" }}
+      >
+        <ResponsiveContainer width="100%" height="100%">
+          <AreaChart
+            width={500}
+            height={400}
+            data={items}
+            margin={{
+              top: 10,
+              right: 0,
+              left: 0,
+              bottom: 0,
             }}
-            fontSize="10px"
-            capHeight={20}
-            xHeight={50}
-            // tickCount={xTicksCount}
-            interval={xInterval}
-          />
-          <YAxis
-            strokeWidth={0}
-            tickMargin={0}
-            dy={-10}
-            tick={{ textAnchor: "start", dy: -5 }}
-            padding={{ bottom: 30 }}
-            domain={["auto", "auto"]}
-            tickCount={5}
-            yAxisId="left"
-            fontSize="12px"
-            color="rgba(148, 148, 148, 1)"
-            tickFormatter={(value: number) => value.toLocaleString()}
-          />
-          {/* <YAxis
+          >
+            <CartesianGrid
+              vertical={false}
+              height={90}
+              strokeDasharray="10 10"
+              stroke="rgba(169, 169, 169, 0.3)"
+            />
+            <XAxis
+              dataKey="month"
+              stroke="white"
+              style={{
+                fontFamily: "Inter, sans-serif",
+              }}
+              fontSize="10px"
+              capHeight={20}
+              xHeight={50}
+              // tickCount={xTicksCount}
+              interval={xInterval}
+            />
+            <YAxis
+              strokeWidth={0}
+              tickMargin={yTickMargin}
+              tick={{ textAnchor: "start", dy: -5 }}
+              padding={{ bottom: 30 }}
+              domain={["auto", "auto"]}
+              tickCount={5}
+              yAxisId="left"
+              fontSize={yFontSize}
+              color="rgba(148, 148, 148, 1)"
+              tickFormatter={(value: number) => value.toLocaleString()}
+            />
+            {/* <YAxis
             strokeWidth={0}
             style={{
               fontFamily: "Inter, sans-serif",
@@ -150,98 +156,98 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             color="rgba(148, 148, 148, 1)"
             tickFormatter={(value: number) => value.toLocaleString()}
           /> */}
-          {/* <Tooltip /> */}
-          <Area
-            type="linear"
-            dataKey="Pre-sale"
-            stackId="1"
-            yAxisId="left"
-            label="Pre-sale"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="rgba(90, 134, 240, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="NFT Launchpad"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(213, 63, 140, 1)"
-            fill="rgba(213, 63, 140, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Pre-farming"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(80, 239, 237, 1)"
-            fill="rgba(80, 239, 237, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Liquidity"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(180, 197, 255, 1)"
-            fill="rgba(180, 197, 255, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Marketing"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(135, 162, 250, 1)"
-            fill="rgba(135, 162, 250, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Game ecosystem"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(90, 134, 240, 1)"
-            fill="rgba(90, 134, 240, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Partners & Advisors"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(241, 241, 245, 1)"
-            fill="rgba(241, 241, 245, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Team"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(157, 234, 201, 1)"
-            fill="rgba(157, 234, 201, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Bounty"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(228, 111, 171, 1)"
-            fill="rgba(228, 111, 171, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Reserve"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(153, 179, 241, 1)"
-            fill="rgba(153, 179, 241, 1)"
-          />
-          <Area
-            type="linear"
-            dataKey="Ambassador program"
-            stackId="1"
-            yAxisId="left"
-            stroke="rgba(205, 205, 242, 1)"
-            fill="rgba(205, 205, 242, 1)"
-          />
+            {/* <Tooltip /> */}
+            <Area
+              type="linear"
+              dataKey="Pre-sale"
+              stackId="1"
+              yAxisId="left"
+              label="Pre-sale"
+              stroke="rgba(90, 134, 240, 1)"
+              fill="rgba(90, 134, 240, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="NFT Launchpad"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(213, 63, 140, 1)"
+              fill="rgba(213, 63, 140, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Pre-farming"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(80, 239, 237, 1)"
+              fill="rgba(80, 239, 237, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Liquidity"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(180, 197, 255, 1)"
+              fill="rgba(180, 197, 255, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Marketing"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(135, 162, 250, 1)"
+              fill="rgba(135, 162, 250, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Game ecosystem"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(90, 134, 240, 1)"
+              fill="rgba(90, 134, 240, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Partners & Advisors"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(241, 241, 245, 1)"
+              fill="rgba(241, 241, 245, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Team"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(157, 234, 201, 1)"
+              fill="rgba(157, 234, 201, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Bounty"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(228, 111, 171, 1)"
+              fill="rgba(228, 111, 171, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Reserve"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(153, 179, 241, 1)"
+              fill="rgba(153, 179, 241, 1)"
+            />
+            <Area
+              type="linear"
+              dataKey="Ambassador program"
+              stackId="1"
+              yAxisId="left"
+              stroke="rgba(205, 205, 242, 1)"
+              fill="rgba(205, 205, 242, 1)"
+            />
 
-          {/* <Area
+            {/* <Area
             type="linear"
             dataKey="pv"
             stackId="1"
@@ -255,8 +261,9 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             stroke="#ffc658"
             fill="transparent"
           /> */}
-        </AreaChart>
-      </ResponsiveContainer>
-    </Box>
+          </AreaChart>
+        </ResponsiveContainer>
+      </Box>
+    </>
   );
 };

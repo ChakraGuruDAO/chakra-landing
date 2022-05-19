@@ -4,7 +4,7 @@ import { Teammate } from "components/teammate";
 
 export const Team = () => {
   return (
-    <Box bg="dark.100" py="150px">
+    <Box bg="dark.100" py={{ base: "50px", md: "150px" }}>
       <Container>
         <CEO
           name="Ravil Berish"

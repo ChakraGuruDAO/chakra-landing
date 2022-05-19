@@ -7,8 +7,8 @@ export interface CoinsProps {}
 export const Coins: React.FC<BoxProps> = ({ ...props }) => {
   return (
     <Box
-      width={{ xl: "600px", md: "445px" }}
-      height={{ xl: "520px", md: "340px" }}
+      width={{ xl: "600px", md: "445px", base: "340px" }}
+      height={{ xl: "520px", md: "340px", base: "261px" }}
       {...props}
       position="relative"
     >
@@ -16,8 +16,8 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
         title="Chakra"
         description="Governance token"
         position="absolute"
-        width={{ xl: "320px", md: "130px" }}
-        height={{ xl: "110px", md: "231px" }}
+        width={{ xl: "320px", md: "130px", base: "70px" }}
+        height={{ xl: "110px", md: "231px", base: "166px" }}
         borderLeft={{ base: "2px solid white" }}
         borderBottom={{ base: "2px solid white" }}
         right={{ xl: "77%", md: "80%" }}
@@ -26,21 +26,27 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
           right: { base: "-17px" },
           bottom: { base: "-10px" },
         }}
-        textBlockProps={{ wdith: { md: "max" } }}
+        textBlockProps={{
+          width: { base: "max" },
+          transform: {
+            base: "translate(-10%)",
+            md: "translate(145%)",
+          },
+        }}
       />
       <Line
         title="Karma"
         description="Utility token"
         position="absolute"
-        width={{ xl: "320px", md: "98px" }}
-        height={{ xl: "52px", md: "225px" }}
+        width={{ xl: "320px", md: "98px", base: "35px" }}
+        height={{ xl: "52px", md: "225px", base: "100px" }}
         borderRight={{ base: "2px solid white" }}
-        borderTop={{ base: "2px solid white" }}
-        left="77%"
-        top="40%"
+        borderBottom={{ base: "2px solid white" }}
+        left={{ base: "75%", md: "77%" }}
+        top={{ base: "0%", md: "40%" }}
         textBlockProps={{
-          top: { base: "100%" },
-          left: { base: "150%" },
+          top: { base: "-44px", md: "100%" },
+          left: { base: "350%", md: "150%" },
           transform: {
             base: "translate(-140%)",
             xl: "translate(-140%)",
@@ -49,7 +55,8 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
         }}
         circleProps={{
           left: { base: "-17px" },
-          top: { base: "-10px" },
+          top: { base: undefined, md: "-10px" },
+          bottom: { base: "-9px", md: undefined },
         }}
       />
       <Img src="/coins.png" zIndex="base" width="100%" height="inherit" />

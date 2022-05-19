@@ -5,12 +5,12 @@ import data from "./data.json";
 
 export const ChakraTokenomic = () => {
   return (
-    <Box bg="dark.100" pt={{ base: "200px" }}>
+    <Box bg="dark.100" py={{ base: "80px", md: "150px" }}>
       <Container>
         <VStack>
           <Heading
             as="h2"
-            fontSize={{ xl: "64px", md: "40px" }}
+            fontSize={{ xl: "64px", md: "40px", base: "24px" }}
             fontWeight={500}
             color="white"
             display="flex"
@@ -21,7 +21,7 @@ export const ChakraTokenomic = () => {
             <Img
               display="inline-block"
               src="/chakra.svg"
-              boxSize={{ xl: "75px", md: "64px" }}
+              boxSize={{ xl: "75px", md: "64px", base: "24px" }}
             />
             &nbsp;
             <Text color="brand.100" as="span">

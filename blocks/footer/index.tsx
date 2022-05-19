@@ -5,7 +5,7 @@ import { FooterBottom } from "./bottom";
 export const Footer = () => {
   return (
     <>
-      <Box bg="dark.100" py="180px" pb="80px">
+      <Box bg="dark.100" py={{ base: "80px", md: "180px" }}>
         <Container>
           <VStack
             backgroundImage="url(/footer-bg.png)"

@@ -4,21 +4,20 @@ import {
   Button,
   Container,
   Heading,
+  Img,
   Text,
   VStack,
 } from "@chakra-ui/react";
 
 export const MultichainMarket = () => {
   return (
-    <Box
-      bg="dark.100"
-      pt={{ base: "100px", md: "140px" }}
-      pb={{ base: "50px", md: "68px" }}
-    >
+    <Box bg="dark.100" py={{ base: "80px", md: "140px" }}>
       <Container
         display="flex"
         justifyContent="space-between"
         alignItems="center"
+        gap={{ base: "30px", md: "30px" }}
+        flexDirection={{ base: "column", md: "row" }}
       >
         <VStack alignItems="flex-start">
           <Heading
@@ -54,6 +53,7 @@ export const MultichainMarket = () => {
             ar-nft characters and keep moving 2 earn
           </Text>
         </VStack>
+        <Img src="/multi-chain.png" width={{ base: "100%", md: "45%" }} />
       </Container>
     </Box>
   );

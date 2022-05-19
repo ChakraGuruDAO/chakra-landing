@@ -14,7 +14,7 @@ export const Profit = () => {
       <Container justifyContent="flex-end" display="flex">
         <VStack maxW={{ xl: "765px", md: "406px" }} alignItems="flex-start">
           <Heading
-            fontSize={{ xl: "64px", md: "46px" }}
+            fontSize={{ xl: "64px", md: "46px", base: "36px" }}
             color="white"
             as="h2"
             mb="40px"
@@ -27,7 +27,7 @@ export const Profit = () => {
           </Heading>
           <Text
             color="white"
-            fontSize={{ xl: "28px", md: "16px" }}
+            fontSize={{ xl: "28px", base: "16px" }}
             lineHeight="150%"
             fontWeight={300}
           >

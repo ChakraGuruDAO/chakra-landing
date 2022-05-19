@@ -4,13 +4,17 @@ import { Coins } from "components/coins";
 
 export const Token = () => {
   return (
-    <Box bg="dark.100" py="120px" pb={{ md: "220px" }}>
+    <Box
+      bg="dark.100"
+      py={{ base: "80px", md: "120px" }}
+      pb={{ base: "80px", md: "220px" }}
+    >
       <Container textAlign="center">
         <Heading
           as="h2"
           color="white"
-          fontSize={{ xl: "64px", md: "46px" }}
-          mb={{ xl: "80px", md: "194px" }}
+          fontSize={{ xl: "64px", md: "46px", base: "36px" }}
+          mb={{ xl: "80px", md: "194px", base: "100px" }}
         >
           The token
         </Heading>
