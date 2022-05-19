@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
-export const Button: ComponentStyleConfig = {
+const Button: ComponentStyleConfig = {
   baseStyle: {
     borderRadius: "6px",
     bg: "pink.100",
@@ -36,3 +36,5 @@ export const Button: ComponentStyleConfig = {
     },
   },
 };
+
+export default Button;

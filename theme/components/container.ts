@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from "@chakra-ui/react";
 
-export const Container: ComponentStyleConfig = {
+const Container: ComponentStyleConfig = {
   baseStyle: {
     maxW: {
       base: "90%",
@@ -14,3 +14,5 @@ export const Container: ComponentStyleConfig = {
     },
   },
 };
+
+export default Container;
