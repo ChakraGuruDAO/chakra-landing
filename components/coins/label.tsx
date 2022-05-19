@@ -12,7 +12,7 @@ export const CoinLabel: React.FC<LabelProps> = ({
 }) => {
   return (
     <HStack
-      spacing={{ base: "12px", md: "16px" }}
+      spacing={{ base: "16px", md: "16px" }}
       position="relative"
       textAlign="left"
       maxW={{ base: "100%", md: "300px" }}

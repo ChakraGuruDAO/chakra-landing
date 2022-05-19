@@ -13,6 +13,7 @@ export const CompeteWin = () => {
   return (
     <Box bg="dark.100" position="relative">
       <Box
+        display="none"
         position="absolute"
         height="100%"
         width={{ xl: "40%", md: "50%" }}
