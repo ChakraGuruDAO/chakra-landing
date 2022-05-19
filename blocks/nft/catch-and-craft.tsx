@@ -5,6 +5,7 @@ import {
   Circle,
   Container,
   Heading,
+  Img,
   Text,
   VStack,
 } from "@chakra-ui/react";
@@ -13,7 +14,7 @@ export const CatchCraft = () => {
   return (
     <Box
       bg="dark.100"
-      pt={{ xl: "140px", md: "100px", base: "60px" }}
+      pt={{ xl: "100px", md: "100px", base: "60px" }}
       pb={{ xl: "68px", md: "100px", base: "60px" }}
       position="relative"
       overflow="hidden"
@@ -61,9 +62,22 @@ export const CatchCraft = () => {
             While modifying the metaverse with the Karma dApp, hunt for rare
             ar-nft characters and keep moving 2 earn
           </Text>
+          <Box display={{ base: "none", md: "flex" }} flexDirection="column">
+            <Text
+              fontSize={{ base: "20px" }}
+              color="brand.100"
+              fontWeight={500}
+              mb="20px"
+            >
+              Try a meta-verse
+            </Text>
+            <Img src="/qrcode.svg" boxSize={{ base: "100px" }} />
+          </Box>
+
           <Button
             alignSelf={{ base: "center", lg: "flex-start" }}
             as="a"
+            display={{ base: "block", md: "none" }}
             href="/Hex_Witcher.usdz"
           >
             Try a meta-verse

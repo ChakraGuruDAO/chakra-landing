@@ -1,4 +1,5 @@
 import { Img, Box, BoxProps } from "@chakra-ui/react";
+import { CoinLabel } from "./label";
 
 import { Line } from "./line";
 
@@ -41,9 +42,10 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
         width={{ xl: "320px", md: "98px", base: "35px" }}
         height={{ xl: "52px", md: "225px", base: "100px" }}
         borderRight={{ base: "2px solid white" }}
-        borderBottom={{ base: "2px solid white" }}
+        borderBottom={{ base: "2px solid white", md: "none" }}
+        borderTop={{ base: "none", md: "2px solid white" }}
         left={{ base: "75%", md: "77%" }}
-        top={{ base: "0%", md: "40%" }}
+        top={{ base: "0%", md: "40%", lg: "28%" }}
         textBlockProps={{
           top: { base: "-44px", md: "100%" },
           left: { base: "350%", md: "150%" },
@@ -55,8 +57,8 @@ export const Coins: React.FC<BoxProps> = ({ ...props }) => {
         }}
         circleProps={{
           left: { base: "-17px" },
-          top: { base: undefined, md: "-10px" },
-          bottom: { base: "-9px", md: undefined },
+          top: { base: undefined, md: "-9px" },
+          bottom: { base: "-9px", md: "0px!important" },
         }}
       />
       <Img src="/coins.png" zIndex="base" width="100%" height="inherit" />

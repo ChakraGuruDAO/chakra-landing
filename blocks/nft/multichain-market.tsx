@@ -11,7 +11,7 @@ import {
 
 export const MultichainMarket = () => {
   return (
-    <Box bg="dark.100" py={{ base: "80px", md: "140px" }}>
+    <Box bg="dark.100" py={{ base: "80px", md: "80px" }}>
       <Container
         display="flex"
         justifyContent="space-between"

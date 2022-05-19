@@ -11,7 +11,7 @@ export const Earth = () => {
   const [minTube, maxTube] = [200, 800];
   const [minSize, maxSize] = [4, 20];
   const [minRadialSegments, maxRadialSegments] = [600, 6000];
-  const [minCameraX, maxCameraX] = [-600, -500];
+  const [minCameraX, maxCameraX] = [-700, -500];
   const [minP, maxP] = [1, 1];
 
   const bodyRef = useRef<HTMLDivElement>(null);

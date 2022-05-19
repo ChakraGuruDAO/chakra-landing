@@ -16,13 +16,14 @@ interface FeaturesProps {}
 export const Features: React.FC<FeaturesProps> = ({}) => {
   return (
     <Box
-      py={{ xl: "200px", md: "90px", base: "60px" }}
+      py={{ xl: "120px", md: "90px", base: "60px" }}
       pb={{ xl: "80px", base: "60px" }}
     >
       <Container textAlign="center" mb="50px">
         <Heading
           fontSize={{ xl: "64px", md: "40px", base: "28px" }}
           fontWeight={500}
+          mb={{ xl: "50px" }}
           lineHeight="120%"
         >
           We&apos;re building the&nbsp;
