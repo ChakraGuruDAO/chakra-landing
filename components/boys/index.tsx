@@ -16,7 +16,6 @@ export const Boys: React.FC<BoysProps> = ({ ...props }) => {
       // var client = new Sketchfab( '1.12.0', iframe );
 
       client.init(uid, {
-        transparent: true,
         ui_animations: false,
         ui_infos: false,
         ui_stop: 0,

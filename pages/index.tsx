@@ -39,7 +39,6 @@ const Home: NextPage = () => {
         strategy="beforeInteractive"
         src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.min.js"
       />
-      <Script type="text/javascript" src="/earth.js" />
       <Hero />
       <Features />
       <NFT />
