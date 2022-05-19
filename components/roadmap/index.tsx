@@ -18,7 +18,7 @@ export interface RoadmapComponentProps {
 
 type RoadmapItem = {
   title: string;
-  content: React.ReactNode;
+  content?: React.ReactNode;
   align: "left" | "right";
   marginTop?: BoxProps["marginTop"];
 };
@@ -53,7 +53,7 @@ const RoadmapCircle = ({
       ref={ref}
       bg="brand.100"
       size={{ base: "48px" }}
-      outline="3px solid white"
+      border="3px solid white"
       position="absolute"
       justifySelf="center"
       // right={align === "left" ? { base: 0 } : { base: "100%" }}
@@ -61,8 +61,8 @@ const RoadmapCircle = ({
       transition="all"
       transitionDuration="0.5s"
       left="50%"
-      transform="translateX(-40%)"
-      opacity={show ? 1 : 0}
+      transform="translate(-40%, 0)"
+      // opacity={show ? 1 : 0}
       // transform={
       //   align === "left"
       //     ? { base: `translateX(150%)` }
@@ -101,13 +101,7 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
         setScrollFactor(scrollFactor);
         setCurrentScroll(scrollY);
         setActiveLineHeight(scrollFactor * maxHeight + 40);
-        console.log({
-          scrollY: target.scrollY,
-          offsetTop,
-          factor,
-          scrollDelta,
-          scrollFactor,
-        });
+        console.log({ scrollY });
       }
     },
     [ref]
@@ -172,12 +166,14 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
               >
                 {item.title}
               </Text>
-              <Box
-                marginLeft={{ base: "10px" }}
-                fontSize={{ xl: "20px", md: "16px" }}
-              >
-                {item.content}
-              </Box>
+              {item.content && (
+                <Box
+                  marginLeft={{ base: "10px" }}
+                  fontSize={{ xl: "20px", md: "16px" }}
+                >
+                  {item.content}
+                </Box>
+              )}
             </Box>
           </Box>
         );

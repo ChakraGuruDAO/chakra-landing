@@ -19,7 +19,7 @@ export const Hero = () => {
       position="relative"
       bgGradient="linear(161.64deg, #060622, #090913)"
       pt={{ base: "20px" }}
-      pb={{ xl: "617px", md: "500px", base: "500px" }}
+      pb={{ lg: "600px", md: "500px", base: "300px" }}
       overflow="hidden"
     >
       <Box
@@ -49,7 +49,7 @@ export const Hero = () => {
             <Logo />
           </Link>
 
-          <Socials telegram="#" discord="#" twitter="#" />
+          <Socials />
         </HStack>
         <VStack textAlign="center" maxW="50rem">
           <Button

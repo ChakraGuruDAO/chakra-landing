@@ -11,7 +11,7 @@ export const Earth = () => {
   const [minTube, maxTube] = [200, 800];
   const [minSize, maxSize] = [4, 20];
   const [minRadialSegments, maxRadialSegments] = [600, 6000];
-  const [minCameraX, maxCameraX] = [-700, -500];
+  const [minCameraX, maxCameraX] = [-600, -500];
   const [minP, maxP] = [1, 1];
 
   const bodyRef = useRef<HTMLDivElement>(null);
@@ -21,6 +21,14 @@ export const Earth = () => {
   const [radialSegments, setRadialSegments] = useState(minRadialSegments);
   const [cameraX, setCameraX] = useState(minCameraX);
   const [p, setP] = useState(minP);
+  const [height, setHeight] = useState(1536);
+
+  useEffect(() => {
+    const body = bodyRef.current;
+    if (body) {
+      setHeight(body.clientHeight);
+    }
+  }, [bodyRef]);
 
   const onUpdateScroll = useCallback(
     (percent: number) => {
@@ -64,7 +72,7 @@ export const Earth = () => {
             : window.scrollY;
         const percent =
           (currentScrollY || 0) / (bodyRef.current?.scrollHeight || 1);
-        onUpdateScroll(percent);
+        // onUpdateScroll(percent);
       }
     },
     [onUpdateScroll, bodyRef]
@@ -86,6 +94,7 @@ export const Earth = () => {
       paddingTop={{ xl: "200px", md: "200px", base: "300px" }}
     >
       <SceneDynamic
+        height={height}
         color="#ffffff"
         rotate={true}
         radius={radius}
@@ -96,7 +105,7 @@ export const Earth = () => {
         p={p}
         q={4}
         asParticles={true}
-        cameraX={Number(cameraX.toFixed(0))}
+        cameraX={cameraX}
         cameraY={0}
         cameraZ={0}
       />

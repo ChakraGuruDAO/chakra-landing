@@ -7,8 +7,8 @@ export const Token = () => {
   return (
     <Box
       bg="dark.100"
-      py={{ base: "80px", md: "120px" }}
-      pb={{ base: "80px", md: "220px" }}
+      py={{ base: "80px", md: "100px" }}
+      pb={{ base: "80px", md: "100px" }}
     >
       <Container textAlign="center">
         <Heading

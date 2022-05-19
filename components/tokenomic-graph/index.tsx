@@ -156,7 +156,7 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             color="rgba(148, 148, 148, 1)"
             tickFormatter={(value: number) => value.toLocaleString()}
           /> */}
-            {/* <Tooltip /> */}
+            <Tooltip />
             <Area
               type="linear"
               dataKey="Pre-sale"

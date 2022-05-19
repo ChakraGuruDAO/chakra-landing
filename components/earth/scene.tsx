@@ -29,6 +29,8 @@ export interface SceneProps {
   cameraX?: number;
   cameraY?: number;
   cameraZ?: number;
+
+  height: number;
 }
 
 export default function Scene({
@@ -48,10 +50,13 @@ export default function Scene({
   cameraZ = 50,
 }: SceneProps) {
   const canvasRef = useRef<HTMLDivElement>(null);
-  const { width } = useWindowSize(window.innerWidth, window.innerHeight);
+  const { width, height } = useWindowSize(
+    window.innerWidth,
+    window.innerHeight
+  );
   const _camera = useMemo(
-    () => new THREE.PerspectiveCamera(100, width / 1536, 0.1, 1000),
-    [width]
+    () => new THREE.PerspectiveCamera(100, width / height, 0.1, 1000),
+    [width, height]
   );
   const _scene = useMemo<THREE.Scene>(() => new THREE.Scene(), []);
   const _webGLRenderer = useMemo(() => new THREE.WebGLRenderer(), []);

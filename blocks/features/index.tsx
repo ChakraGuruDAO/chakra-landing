@@ -21,9 +21,9 @@ export const Features: React.FC<FeaturesProps> = ({}) => {
     >
       <Container textAlign="center" mb="50px">
         <Heading
-          fontSize={{ xl: "64px", md: "40px", base: "28px" }}
+          fontSize={{ xl: "64px", md: "40px", base: "22px" }}
           fontWeight={500}
-          mb={{ xl: "50px" }}
+          mb={{ base: "50px" }}
           lineHeight="120%"
         >
           We&apos;re building the&nbsp;

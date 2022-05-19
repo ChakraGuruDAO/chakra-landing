@@ -10,7 +10,7 @@ import { PRE_SALE_LINK } from "config/links";
 
 export const Profit = () => {
   return (
-    <Box bg="dark.100" py={{ xl: "130px", md: "115px" }}>
+    <Box bg="dark.100" py={{ lg: "90px", md: "80px" }}>
       <Container justifyContent="flex-end" display="flex">
         <VStack maxW={{ xl: "765px", md: "406px" }} alignItems="flex-start">
           <Heading
