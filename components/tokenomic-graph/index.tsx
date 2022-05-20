@@ -1,4 +1,10 @@
-import { Box, Text, useBreakpointValue } from "@chakra-ui/react";
+import {
+  Box,
+  useBreakpointValue,
+  Text,
+  Heading,
+  HStack,
+} from "@chakra-ui/react";
 import {
   AreaChart,
   Area,
@@ -7,54 +13,9 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
-  ZAxis,
+  TooltipProps,
 } from "recharts";
 import { Pies } from "./pies";
-
-const data = [
-  {
-    name: "Page A",
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: "Page B",
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: "Page C",
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: "Page D",
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: "Page E",
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: "Page F",
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: "Page G",
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
 
 export interface TokenomicItem {
   month: string;
@@ -88,10 +49,9 @@ export interface TokenomicGraphProps {
 }
 
 export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
-  // const xTicksCount = useBreakpointValue({ xl: 60, md: 60 / 5 });
-  const xInterval = useBreakpointValue({ xl: 0, md: 5, base: 5 });
+  const xInterval = useBreakpointValue({ base: 5, md: 5, xl: 0 });
   const yTickMargin = useBreakpointValue({ base: 50, md: -5 });
-  const yFontSize = useBreakpointValue({ base: "8px", md: "12px" });
+  const yFontSize = useBreakpointValue({ base: 7, md: 12 });
 
   return (
     <>
@@ -104,8 +64,6 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
       >
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
-            // width={600}
-            // height={400}
             data={items}
             margin={{
               top: 10,
@@ -122,13 +80,9 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             <XAxis
               dataKey="month"
               stroke="white"
-              style={{
-                fontFamily: "Inter, sans-serif",
-              }}
               fontSize="10px"
               capHeight={20}
               xHeight={50}
-              // tickCount={xTicksCount}
               interval={xInterval}
             />
             <YAxis
@@ -143,19 +97,7 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
               color="rgba(148, 148, 148, 1)"
               tickFormatter={(value: number) => value.toLocaleString()}
             />
-            {/* <YAxis
-            strokeWidth={0}
-            style={{
-              fontFamily: "Inter, sans-serif",
-            }}
-            yAxisId="right"
-            dataKey="name"
-            orientation="right"
-            fontSize="12px"
-            color="rgba(148, 148, 148, 1)"
-            tickFormatter={(value: number) => value.toLocaleString()}
-          /> */}
-            <Tooltip labelFormatter={(label) => `${label} month`} />
+            <Tooltip content={<CustomTooltip />} />
             <Area
               type="linear"
               dataKey="Pre-sale"
@@ -178,8 +120,8 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
               dataKey="Pre-farming"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(80, 239, 237, 1)"
-              fill="rgba(80, 239, 237, 1)"
+              stroke="var(--chakra-colors-teal-400)"
+              fill="var(--chakra-colors-teal-400)"
             />
             <Area
               type="linear"
@@ -202,67 +144,92 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
               dataKey="Game ecosystem"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(90, 134, 240, 1)"
-              fill="rgba(90, 134, 240, 1)"
+              stroke="var(--chakra-colors-green-400)"
+              fill="var(--chakra-colors-green-400)"
             />
             <Area
               type="linear"
               dataKey="Partners & Advisors"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(241, 241, 245, 1)"
-              fill="rgba(241, 241, 245, 1)"
+              stroke="var(--chakra-colors-red-400)"
+              fill="var(--chakra-colors-red-400)"
             />
             <Area
               type="linear"
               dataKey="Team"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(157, 234, 201, 1)"
-              fill="rgba(157, 234, 201, 1)"
+              stroke="var(--chakra-colors-cyan-400)"
+              fill="var(--chakra-colors-cyan-400)"
             />
             <Area
               type="linear"
               dataKey="Bounty"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(228, 111, 171, 1)"
-              fill="rgba(228, 111, 171, 1)"
+              stroke="var(--chakra-colors-gray-400)"
+              fill="var(--chakra-colors-gray-400)"
             />
             <Area
               type="linear"
               dataKey="Reserve"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(153, 179, 241, 1)"
-              fill="rgba(153, 179, 241, 1)"
+              stroke="var(--chakra-colors-pink-400)"
+              fill="var(--chakra-colors-pink-400)"
             />
             <Area
               type="linear"
               dataKey="Ambassador program"
               stackId="1"
               yAxisId="left"
-              stroke="rgba(205, 205, 242, 1)"
-              fill="rgba(205, 205, 242, 1)"
+              stroke="var(--chakra-colors-blue-400)"
+              fill="var(--chakra-colors-blue-400)"
             />
-
-            {/* <Area
-            type="linear"
-            dataKey="pv"
-            stackId="1"
-            stroke="#82ca9d"
-            fill="transparent"
-          />
-          <Area
-            type="linear"
-            dataKey="amt"
-            stackId="1"
-            stroke="#ffc658"
-            fill="transparent"
-          /> */}
           </AreaChart>
         </ResponsiveContainer>
       </Box>
     </>
   );
+};
+
+const CustomTooltip: React.FC<TooltipProps<any, any>> = ({
+  active,
+  payload,
+  label,
+}) => {
+  if (active) {
+    return (
+      <Box
+        background="whiteAlpha.900"
+        border="1px solid var(--chakra-colors-blue-200)"
+        borderRadius={10}
+        minH="200px"
+        minW="150px"
+        px={4}
+        py={6}
+      >
+        <Heading size="md">{label} month</Heading>
+        {payload.map((data) => (
+          <HStack key={data.dataKey} justifyContent="space-between" gap={4}>
+            <Text color={data.color}>{data.name}</Text>
+            <Text color={data.color}>
+              {typeof data.value === "number"
+                ? data.value.toLocaleString("en-US")
+                : ""}
+            </Text>
+          </HStack>
+        ))}
+      </Box>
+    );
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{`${label} : ${payload[0].value}`}</p>
+        <p className="desc">Anything you want can be displayed here.</p>
+      </div>
+    );
+  }
+
+  return null;
 };
