@@ -5,11 +5,17 @@ import {
   Container,
   Heading,
   Text,
+  useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
 import { Boys } from "components/boys";
 
 export const CompeteWin = () => {
+  const boysSize = useBreakpointValue<"sm" | "md" | "xl">({
+    base: "sm",
+    md: "md",
+    xl: "xl",
+  });
   return (
     <Box bg="dark.100" position="relative">
       <Container
@@ -20,13 +26,15 @@ export const CompeteWin = () => {
       >
         <Boys
           position="absolute"
-          top="0"
-          bottom="0"
           width={{ base: "100%" }}
           height={{ base: "100%" }}
+          top="0"
+          bottom="0"
           left="0"
           right="0"
+          size={boysSize}
         />
+
         <VStack
           maxWidth={{ base: "370px" }}
           justifySelf={{ base: "flex-start", md: "center" }}

@@ -19,9 +19,9 @@ import { TitleBlock } from "./titleBlock";
 import { HeaderBlock } from "./headerBlock";
 
 export const Hero = () => {
-  const sceneRadius = useBreakpointValue<[number, number]>({ base: [14, 20] });
-  const sceneTube = useBreakpointValue<[number, number]>({ base: [200, 400] });
-  const sceneSize = useBreakpointValue<[number, number]>({ base: [4, 10] });
+  const sceneRadius = useBreakpointValue<[number, number]>({ base: [14, 800] });
+  const sceneTube = useBreakpointValue<[number, number]>({ base: [200, 800] });
+  const sceneSize = useBreakpointValue<[number, number]>({ base: [4, 40] });
   const sceneRadialSegments = useBreakpointValue<[number, number]>({
     base: [600, 1000],
   });
