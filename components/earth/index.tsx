@@ -1,8 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { useScrollParams } from "hooks/useScrollParams";
-import { Box, useBreakpointValue } from "@chakra-ui/react";
-import { toPx } from "utils";
+import { Box } from "@chakra-ui/react";
 
 const SceneDynamic = dynamic(() => import("./scene"), { ssr: false });
 
@@ -75,7 +73,7 @@ export const Earth = () => {
         // onUpdateScroll(percent);
       }
     },
-    [onUpdateScroll, bodyRef]
+    [bodyRef]
   );
 
   useEffect(() => {

@@ -11,14 +11,7 @@ export interface HeaderBlockProps {
   githubUrl?: string;
 }
 
-export const HeaderBlock: React.FC<HeaderBlockProps> = ({
-  rootUrl,
-  telegramUrl,
-  discordUrl,
-  twitterUrl,
-  mediumUrl,
-  githubUrl,
-}) => {
+export const HeaderBlock: React.FC<HeaderBlockProps> = ({ rootUrl }) => {
   return (
     <HStack
       justifyContent="space-between"
@@ -29,13 +22,7 @@ export const HeaderBlock: React.FC<HeaderBlockProps> = ({
         <Logo />
       </Link>
 
-      <Socials
-        telegram={telegramUrl}
-        discord={discordUrl}
-        twitter={twitterUrl}
-        github={githubUrl}
-        medium={mediumUrl}
-      />
+      <Socials />
     </HStack>
   );
 };

@@ -5,13 +5,7 @@ import {
   Link,
   StackProps,
 } from "@chakra-ui/react";
-import {
-  GITHUB_LINK,
-  MEDIUM_LINK,
-  TELEGRAM_LINK,
-  DISCORD_LINK,
-  TWITTER_LINK,
-} from "config/links";
+import { telegramUrl, discordUrl, twitterUrl } from "config/links";
 import {
   DiscordIcon,
   GithubIcon,
@@ -23,13 +17,13 @@ import {
 export const Socials: React.FC<StackProps> = ({ ...props }) => {
   return (
     <HStack gap="10px" {...props}>
-      <Link href={TELEGRAM_LINK} target="_blank">
+      <Link href={telegramUrl} target="_blank">
         <TelegramIcon color="brand.100" boxSize="24.75px" />
       </Link>
-      <Link href={DISCORD_LINK} target="_blank">
+      <Link href={discordUrl} target="_blank">
         <DiscordIcon color="brand.100" boxSize="28px" />
       </Link>
-      <Link href={TWITTER_LINK} target="_blank">
+      <Link href={twitterUrl} target="_blank">
         <TwitterIcon color="brand.100" h="21.75px" w="24.75px" />
       </Link>
     </HStack>

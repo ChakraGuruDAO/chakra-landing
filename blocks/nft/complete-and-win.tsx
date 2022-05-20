@@ -11,6 +11,11 @@ import {
 import { Boys } from "components/boys";
 
 export const CompeteWin = () => {
+  const boysSize = useBreakpointValue<"sm" | "md" | "xl">({
+    base: "sm",
+    md: "md",
+    xl: "xl",
+  });
   return (
     <Box bg="dark.100" position="relative">
       <Container
@@ -27,6 +32,7 @@ export const CompeteWin = () => {
           bottom="0"
           left="0"
           right="0"
+          size={boysSize}
         />
 
         <VStack

@@ -1,5 +1,5 @@
 import { Box, Button, SimpleGrid, Text, VStack } from "@chakra-ui/react";
-import { PRE_SALE_LINK } from "config/links";
+import { saleUrl } from "config/links";
 
 export interface DAOCardProps {}
 
@@ -58,7 +58,7 @@ export const DAOCard: React.FC<DAOCardProps> = () => {
             the players. Innovative MetaFi economics reward avatars for their
             action.
           </Text>
-          <Button as="a" href={PRE_SALE_LINK} variant="white">
+          <Button as="a" href={saleUrl} variant="white">
             Join the pre-sale
           </Button>
         </VStack>

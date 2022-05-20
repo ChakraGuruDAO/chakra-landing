@@ -13,6 +13,7 @@ export default class Document extends NextDocument {
           <script
             type="text/javascript"
             src="//static.sketchfab.com/api/sketchfab-viewer-1.12.0.js"
+            async
           />
         </Head>
         <body>
