@@ -10,7 +10,7 @@ import { saleUrl } from "config/links";
 
 export const Profit = () => {
   return (
-    <Box bg="dark.100" py={{ lg: "90px", md: "80px" }}>
+    <Box bg="dark.100" pt={{ md: 16, lg: 0 }} pb={{ base: 16, lg: 20 }}>
       <Container justifyContent="flex-end" display="flex">
         <VStack maxW={{ xl: "765px", md: "406px" }} alignItems="flex-start">
           <Heading

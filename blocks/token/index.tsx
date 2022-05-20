@@ -5,11 +5,7 @@ import { CoinLabel } from "components/coins/label";
 
 export const Token = () => {
   return (
-    <Box
-      bg="dark.100"
-      py={{ base: "80px", md: "100px" }}
-      pb={{ base: "80px", md: "100px" }}
-    >
+    <Box bg="dark.100" py={{ base: 12, md: 16 }} pb={{ base: 20, md: 25 }}>
       <Container textAlign="center">
         <Heading
           as="h2"
