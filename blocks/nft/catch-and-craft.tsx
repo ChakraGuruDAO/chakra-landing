@@ -18,6 +18,9 @@ export const CatchCraft = () => {
       pb={{ xl: "68px", md: "100px", base: "60px" }}
       position="relative"
       overflow="hidden"
+      bgImage="url(/catch-and-craft-bg.jpg)"
+      bgSize="cover"
+      bgRepeat="no-repeat"
     >
       <Container
         display="flex"

@@ -1,4 +1,5 @@
-import { Button, Heading, VStack, Text } from "@chakra-ui/react";
+import { Button, Heading, VStack, Text, HStack, Icon } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
 
 export interface TitleBlockProps {
   presaleUrl: string;
@@ -7,15 +8,6 @@ export interface TitleBlockProps {
 export const TitleBlock: React.FC<TitleBlockProps> = ({ presaleUrl }) => {
   return (
     <VStack direction="column" textAlign="center" maxW="70rem">
-      <Button
-        as="a"
-        href={presaleUrl}
-        colorScheme="pink"
-        variant="solid"
-        height={{ base: "30px" }}
-      >
-        Join the pre-sale
-      </Button>
       <Heading
         lineHeight="110%"
         as="h1"
@@ -43,6 +35,27 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({ presaleUrl }) => {
         aggregate existing realities. Let&apos;s build the metaverse by
         empowering people to be a part of it.
       </Text>
+      <HStack mt="20px!important">
+        <Button
+          as="a"
+          href={presaleUrl}
+          colorScheme="pink"
+          variant="solid"
+          rightIcon={<ArrowForwardIcon />}
+          height={{ base: "30px" }}
+        >
+          Join the pre-sale
+        </Button>
+        <Button
+          as="a"
+          href={presaleUrl}
+          colorScheme="green"
+          variant="solid"
+          height={{ base: "30px" }}
+        >
+          Documentation
+        </Button>
+      </HStack>
     </VStack>
   );
 };
