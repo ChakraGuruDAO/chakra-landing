@@ -4,6 +4,7 @@ import {
   useCallback,
   useEffect,
   useLayoutEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -19,7 +20,7 @@ export interface SceneScrollProps {
   p?: [number, number];
 }
 
-export function SceneScroll({
+export default function SceneScroll({
   backgroundColor,
   radius: [minRadius, maxRadius] = [14, 300],
   tube: [minTube, maxTube] = [200, 800],
@@ -78,28 +79,30 @@ export function SceneScroll({
     };
   }, [onUpdateScroll]);
 
-  // console.log(width, height);
+  const isRender = window.scrollY <= bodyRef.current?.scrollHeight;
 
   return (
     <Box ref={bodyRef} width="full" height="full">
-      <SceneNext
-        width={width}
-        height={height}
-        backgroundColor={backgroundColor}
-        color="#fff"
-        rotate={true}
-        radius={radius}
-        tube={tube}
-        size={size}
-        radialSegments={radialSegments}
-        tubularSegments={12}
-        p={p}
-        q={4}
-        asParticles={true}
-        cameraX={cameraX}
-        cameraY={0}
-        cameraZ={0}
-      />
+      {isRender ? (
+        <SceneNext
+          width={width}
+          height={height}
+          backgroundColor={backgroundColor}
+          color="#fff"
+          rotate={true}
+          radius={radius}
+          tube={tube}
+          size={size}
+          radialSegments={radialSegments}
+          tubularSegments={12}
+          p={p}
+          q={4}
+          asParticles={true}
+          cameraX={cameraX}
+          cameraY={0}
+          cameraZ={0}
+        />
+      ) : null}
     </Box>
   );
 }

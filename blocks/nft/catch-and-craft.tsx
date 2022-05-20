@@ -109,6 +109,7 @@ export const CatchCraft = () => {
               maskSize: "150%",
             }}
             autoPlay
+            playsInline
             w={{ xl: "337px", md: "229px", base: "200px" }}
             h={{ md: "500px", xl: "655px", base: "445px" }}
             loop
@@ -117,15 +118,6 @@ export const CatchCraft = () => {
           />
         </VStack>
       </Container>
-      <Circle
-        bg="brand.100"
-        size={{ base: "500px" }}
-        filter="blur(900px)"
-        position="absolute"
-        bottom="-100px"
-        zIndex="-100"
-        left="-100px"
-      />
     </Box>
   );
 };

@@ -14,7 +14,7 @@ import {
 import dayjs from "dayjs";
 import { PreSaleLine } from "components/pre-sale-line";
 import { PreSaleTimer } from "components/pre-sale-timer";
-import { PRE_SALE_LINK } from "config/links";
+import { saleUrl } from "config/links";
 
 export const PreSale = () => {
   return (
@@ -44,10 +44,10 @@ export const PreSale = () => {
               The CHAKRA DAO offers two core pools. Variable locking for up to
               twelve months is available for MC and LP staking.
             </Text>
-            <PreSaleTimer
+            {/* <PreSaleTimer
               mt={{ xl: "54px", md: "40px" }}
               expireOn={dayjs().add(1, "months").toDate()}
-            />
+            /> */}
           </VStack>
           <VStack
             alignItems="flex-start"
@@ -194,7 +194,7 @@ export const PreSale = () => {
                 </Text>
               </VStack>
             </HStack>
-            <Button as="a" href={PRE_SALE_LINK} variant="pre-sale">
+            <Button as="a" href={saleUrl} variant="pre-sale">
               Pre-sale
             </Button>
           </VStack>
