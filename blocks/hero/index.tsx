@@ -6,6 +6,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import {
+  docsUrl,
   discordUrl,
   githubUrl,
   mediumUrl,
@@ -54,7 +55,7 @@ export const Hero = () => {
           />
         </Box>
         <VStack flex={1} justifyContent="center">
-          <TitleBlock presaleUrl={saleUrl} />
+          <TitleBlock presaleUrl={saleUrl} docsUrl={docsUrl} />
         </VStack>
       </VStack>
       <Box zIndex={0} position="absolute" top={0} bottom={0} left={0} right={0}>
