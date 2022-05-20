@@ -104,7 +104,7 @@ export default function Scene({
 
   const render = useCallback(() => {
     if (_controls.rotate) {
-      _controls.knot.rotation.y = _controls.knot.rotation.y + 0.0015;
+      _controls.knot.rotation.y = _controls.knot.rotation.y + 0.002;
     }
 
     requestAnimationFrame(render);

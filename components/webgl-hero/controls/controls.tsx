@@ -26,6 +26,7 @@ export class Controls {
   }
 
   redraw = () => {
+    const prevRotation = this._knot?.rotation;
     if (this._knot) this._scene?.remove(this._knot);
 
     const geom = new THREE.TorusKnotGeometry(
@@ -43,7 +44,8 @@ export class Controls {
       this._knot = createMesh(geom);
     }
 
-    // add it to the scene.
+    if (prevRotation) this._knot.rotation.copy(prevRotation);
+
     this._scene?.add(this._knot);
   };
 }
