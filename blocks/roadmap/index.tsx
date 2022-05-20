@@ -45,7 +45,7 @@ export const Roadmap = () => {
             {
               title: "2022 Q3",
               align: "right",
-              marginTop: { base: "20px!important" },
+              marginTop: { lg: "-200px!important" },
               content: (
                 <UnorderedList color="white">
                   <ListItem>Concept & Design Doc Karma prod.</ListItem>
@@ -57,6 +57,7 @@ export const Roadmap = () => {
             {
               title: "2022 Q4",
               align: "left",
+              marginTop: { lg: "-100px!important" },
               content: (
                 <UnorderedList color="white">
                   <ListItem>Genetic Avatar Launchpad.</ListItem>
@@ -68,6 +69,7 @@ export const Roadmap = () => {
             {
               title: "2023 Q1",
               align: "right",
+              marginTop: { lg: "-100px!important" },
               content: (
                 <UnorderedList color="white">
                   <ListItem>IDO Chakra Token - 1kk$</ListItem>
@@ -78,12 +80,21 @@ export const Roadmap = () => {
             {
               title: "2023 Q2",
               align: "left",
+              marginTop: { lg: "-70px!important" },
               content: (
                 <UnorderedList color="white">
                   <ListItem>Public relise Karma game.</ListItem>
                   <ListItem>Public Relise Chakra Token</ListItem>
                 </UnorderedList>
               ),
+            },
+            {
+              title: "2023 Q2",
+              align: "right",
+            },
+            {
+              title: "2023 Q2",
+              align: "left",
             },
           ]}
         />

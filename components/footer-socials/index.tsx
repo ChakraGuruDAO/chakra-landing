@@ -20,9 +20,15 @@ import {
   TwitterIcon,
 } from "../icons";
 
-export const Socials: React.FC<StackProps> = ({ ...props }) => {
+export const FooterSocials: React.FC<StackProps> = ({ ...props }) => {
   return (
     <HStack gap="10px" {...props}>
+      <Link href={GITHUB_LINK} target="_blank">
+        <GithubIcon color="brand.100" boxSize="25px" />
+      </Link>
+      <Link href={MEDIUM_LINK} target="_blank">
+        <MediumIcon color="brand.100" boxSize="25px" />
+      </Link>
       <Link href={TELEGRAM_LINK} target="_blank">
         <TelegramIcon color="brand.100" boxSize="24.75px" />
       </Link>

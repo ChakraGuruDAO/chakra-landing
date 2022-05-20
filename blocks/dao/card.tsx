@@ -22,13 +22,14 @@ export const DAOCard: React.FC<DAOCardProps> = () => {
       backgroundRepeat="no-repeat"
       backgroundPosition={{
         base: "bottom -2px left 0",
-        md: "top 100% right -36%",
+        md: "top 100% right -80%",
+        lg: "top 100% right -28%",
       }}
       padding={{
         base: "35px",
         md: undefined,
       }}
-      backgroundSize={{ xl: "50%", md: "60%" }}
+      backgroundSize={{ md: "70%", lg: "60%" }}
     >
       <SimpleGrid
         columns={{

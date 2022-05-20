@@ -90,7 +90,7 @@ export interface TokenomicGraphProps {
 export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
   // const xTicksCount = useBreakpointValue({ xl: 60, md: 60 / 5 });
   const xInterval = useBreakpointValue({ xl: 0, md: 5, base: 5 });
-  const yTickMargin = useBreakpointValue({ base: 50, md: 0 });
+  const yTickMargin = useBreakpointValue({ base: 50, md: -5 });
   const yFontSize = useBreakpointValue({ base: "8px", md: "12px" });
 
   return (
@@ -104,13 +104,12 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
       >
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
-            width={500}
-            height={400}
+            // width={600}
+            // height={400}
             data={items}
             margin={{
               top: 10,
-              right: 0,
-              left: 0,
+              right: 10,
               bottom: 0,
             }}
           >
@@ -156,7 +155,7 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
             color="rgba(148, 148, 148, 1)"
             tickFormatter={(value: number) => value.toLocaleString()}
           /> */}
-            {/* <Tooltip /> */}
+            <Tooltip labelFormatter={(label) => `${label} month`} />
             <Area
               type="linear"
               dataKey="Pre-sale"

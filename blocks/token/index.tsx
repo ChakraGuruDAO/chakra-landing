@@ -7,8 +7,8 @@ export const Token = () => {
   return (
     <Box
       bg="dark.100"
-      py={{ base: "80px", md: "120px" }}
-      pb={{ base: "80px", md: "220px" }}
+      py={{ base: "80px", md: "100px" }}
+      pb={{ base: "80px", md: "100px" }}
     >
       <Container textAlign="center">
         <Heading
@@ -27,20 +27,29 @@ export const Token = () => {
           pb={{ base: "200px", md: "150px" }}
         >
           <Coins />
-          <CoinLabel
-            position={{ md: "absolute" }}
-            value="If you want to earn with the #karma token, you can do it on the exchange"
-            color="brand.100"
-            bottom="0"
+          <Box
+            position="absolute"
             left="0"
-          />
-          <CoinLabel
-            position={{ md: "absolute" }}
-            top="0"
             right="0"
-            value="If you want to earn with the #karma token, you can do it on the exchange"
-            color="pink.100"
-          />
+            bottom={{ base: "100px" }}
+            top={{ base: undefined, md: "0" }}
+          >
+            <CoinLabel
+              position={{ base: "absolute" }}
+              value="If you want to earn with the #karma token, you can do it on the exchange"
+              color="brand.100"
+              bottom="0"
+              left="0"
+              mb={{ base: "16px", md: undefined }}
+            />
+            <CoinLabel
+              position={{ base: "absolute" }}
+              top="0"
+              right="0"
+              value="If you want to earn with the #karma token, you can do it on the exchange"
+              color="pink.100"
+            />
+          </Box>
         </Box>
       </Container>
     </Box>

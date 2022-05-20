@@ -5,7 +5,7 @@ import data from "./data.json";
 
 export const ChakraTokenomic = () => {
   return (
-    <Box bg="dark.100" py={{ base: "80px", md: "150px" }}>
+    <Box bg="dark.100" py={{ base: "80px", md: "90px" }}>
       <Container>
         <VStack>
           <Heading

@@ -13,6 +13,7 @@ export const CompeteWin = () => {
   return (
     <Box bg="dark.100" position="relative">
       <Box
+        display="none"
         position="absolute"
         height="100%"
         width={{ xl: "40%", md: "50%" }}
@@ -41,6 +42,9 @@ export const CompeteWin = () => {
           // top={{ base: "50%" }}
           // transform={{ base: "translateY(-50%)" }}
           zIndex="overlay"
+          // background="blackAlpha.600"
+          // borderRadius="20px"
+          // p="16px"
         >
           <Heading
             color={{ xl: "white", md: "brand.100" }}
@@ -66,7 +70,6 @@ export const CompeteWin = () => {
             fontWeight={300}
             fontSize={{ xl: "20px", md: "16px" }}
             lineHeight="150%"
-            mb="24px!important"
           >
             While modifying the metaverse with the Karma dApp, hunt for rare
             ar-nft characters and keep moving 2 earn
