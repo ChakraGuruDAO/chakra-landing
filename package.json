@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build": "docker buildx build --memory=6g --cache-from chakra-guru-landing --tag chakra-guru-landing --file ./docker/Dockerfile --build-arg BUILDKIT_INLINE_CACHE=1 ./ --platform linux/amd64",
+    "docker:run": "docker run -p 3000:3000 chakra-guru-landing"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
