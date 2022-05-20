@@ -16,7 +16,7 @@ const Button: ComponentStyleConfig = {
   },
   variants: {
     white: {
-      color: "pink.100",
+      color: "#D53F8C",
       bg: "white",
       transition: "all",
       transitionDuration: "0.3s",

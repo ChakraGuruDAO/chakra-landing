@@ -44,10 +44,10 @@ export const PreSale = () => {
               The CHAKRA DAO offers two core pools. Variable locking for up to
               twelve months is available for MC and LP staking.
             </Text>
-            {/* <PreSaleTimer
+            <PreSaleTimer
               mt={{ xl: "54px", md: "40px" }}
               expireOn={dayjs().add(1, "months").toDate()}
-            /> */}
+            />
           </VStack>
           <VStack
             alignItems="flex-start"

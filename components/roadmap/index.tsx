@@ -95,13 +95,13 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
       const scrollY = target.scrollY;
 
       if (scrollY >= offsetTop && scrollY <= maxScroll) {
-        const factor = scrollY / maxScroll;
         const scrollDelta = scrollY - offsetTop;
         const scrollFactor = scrollDelta / maxHeight;
         setScrollFactor(scrollFactor);
         setCurrentScroll(scrollY);
-        setActiveLineHeight(scrollFactor * maxHeight + 40);
-        console.log({ scrollY });
+        setActiveLineHeight(scrollFactor * maxHeight + 80);
+      } else {
+        setActiveLineHeight(0);
       }
     },
     [ref]
@@ -180,22 +180,24 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
       })}
       <Box
         position="absolute"
-        bg="brand.100"
-        top="0"
-        height={activeLineHeight}
-        width="6px"
-        left="50%"
-        zIndex={2}
-      />
-      <Box
-        position="absolute"
         bg="white"
         top="0"
         zIndex={1}
         bottom="0"
         width="6px"
         left="50%"
-      />
+        overflow="hidden"
+      >
+        <Box
+          position="absolute"
+          bg="brand.100"
+          top="0"
+          height={activeLineHeight}
+          width="6px"
+          left="0"
+          zIndex={2}
+        />
+      </Box>
     </VStack>
   );
 };
