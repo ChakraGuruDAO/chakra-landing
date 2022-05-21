@@ -28,7 +28,7 @@ export const TitleBlock: React.FC<TitleBlockProps> = ({
           color="brand.100"
           wordBreak="break-word"
         >
-          AR-Metaverse
+          AR Metaverse
         </Text>
       </Heading>
       <Text

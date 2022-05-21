@@ -5,10 +5,12 @@ import {
   Circle,
   Container,
   Heading,
+  HStack,
   Img,
   Text,
   VStack,
 } from "@chakra-ui/react";
+import { FaArrowLeft } from "react-icons/fa";
 
 export const CatchCraft = () => {
   return (
@@ -66,18 +68,31 @@ export const CatchCraft = () => {
             ar-nft characters and keep moving 2 earn
           </Text>
           <Box display={{ base: "none", md: "flex" }} flexDirection="column">
-            <Text
+            {/* <Text
               fontSize={{ base: "20px" }}
               color="brand.100"
               fontWeight={500}
               mb="20px"
             >
               Try a meta-verse
-            </Text>
-            <Img src="/qrcode.svg" boxSize={{ base: "100px" }} />
+            </Text> */}
+            <HStack>
+              <Img src="/qrcode.svg" boxSize={{ base: "100px" }} />
+              <HStack
+                color="brand.200"
+                minW={60}
+                justifyContent="space-between"
+                pl={10}
+              >
+                <FaArrowLeft size={32} color="var(--chakra-colors-brand-200)" />
+                <Text fontSize="2xl" fontWeight="black">
+                  TRY IT NOW
+                </Text>
+              </HStack>
+            </HStack>
           </Box>
 
-          <Button
+          {/* <Button
             alignSelf={{ base: "center", lg: "flex-start" }}
             as="a"
             colorScheme="pink"
@@ -85,7 +100,7 @@ export const CatchCraft = () => {
             href="/Hex_Witcher.usdz"
           >
             Try a meta-verse
-          </Button>
+          </Button> */}
         </VStack>
         <VStack
           w={{ xl: "346px", md: "300px", base: "250px" }}
