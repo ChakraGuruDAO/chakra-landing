@@ -43,7 +43,7 @@ export const CompeteWin = () => {
           zIndex="overlay"
           gap={{ lg: 1 }}
           alignItems={{ xl: "flex-start" }}
-          color={{ xl: "teal.300", base: "brand.100" }}
+          color={{ xl: "teal.300", base: "teal.300" }}
           px={12}
           py={8}
           position="relative"
@@ -63,7 +63,7 @@ export const CompeteWin = () => {
             bg="blue.900"
             borderRadius={12}
             border="1px solid "
-            opacity="0.8"
+            opacity="0.2"
           />
           <Heading
             textTransform="uppercase"
@@ -72,7 +72,7 @@ export const CompeteWin = () => {
             fontSize={{ xl: "64px", md: "46px", base: "26px" }}
             lineHeight="120%"
             zIndex={1000}
-            filter="blur(0.1px)"
+            filter={{ lg: "blur(0.1px)" }}
           >
             Fight to win
           </Heading>
@@ -80,8 +80,9 @@ export const CompeteWin = () => {
             fontWeight={300}
             fontSize={{ xl: "20px", base: "16px" }}
             lineHeight="150%"
+            zIndex={1000}
             color={{ base: "blue.100" }}
-            filter="blur(0.1px)"
+            filter={{ lg: "blur(0.1px)" }}
           >
             Immersion in the ecosystem goes through Game-Fi mechanisms. Fight
             and defeat other players. Join clans and take part in quests.
@@ -90,8 +91,9 @@ export const CompeteWin = () => {
             fontWeight={300}
             fontSize={{ xl: "20px", base: "16px" }}
             lineHeight="150%"
+            zIndex={1000}
             color={{ base: "blue.100" }}
-            filter="blur(0.1px)"
+            filter={{ lg: "blur(0.1px)" }}
           >
             KARMA includes several fight modes PvP and PvE. Players use the own
             collection of Game-elements with their own characteristics and

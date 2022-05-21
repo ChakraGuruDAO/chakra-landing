@@ -110,6 +110,7 @@ export const CatchCraft = () => {
           <Button
             alignSelf={{ base: "center", lg: "flex-start" }}
             as="a"
+            rel="ar"
             colorScheme="pink"
             display={{ base: "block", lg: "none" }}
             href="/Hex_Witcher.usdz"
