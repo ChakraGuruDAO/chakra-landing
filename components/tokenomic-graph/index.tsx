@@ -5,6 +5,8 @@ import {
   Heading,
   HStack,
 } from "@chakra-ui/react";
+import LINQ from "@berish/linq";
+import { useMemo } from "react";
 import {
   AreaChart,
   Area,
@@ -15,7 +17,7 @@ import {
   ResponsiveContainer,
   TooltipProps,
 } from "recharts";
-import { Pies } from "./pies";
+import { PieProps, Pies } from "./pies";
 
 export interface TokenomicItem {
   month: string;
@@ -31,24 +33,40 @@ export interface TokenomicItem {
 
 export interface NewTokenomicItem {
   month: number;
-  "Pre-sale": number;
-  "NFT Launchpad": number;
-  "Pre-farming": number;
-  Liquidity: number;
-  Marketing: number;
-  "Game ecosystem": number;
-  "Partners & Advisors": number;
-  Team: number;
-  Bounty: number;
-  Reserve: number;
-  "Ambassador program": number;
+  [key: string]: number;
 }
 
 export interface TokenomicGraphProps {
   items: NewTokenomicItem[];
+  pieItems: PieProps[];
 }
 
-export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
+const colors = [
+  "rgba(90, 134, 240, 1)",
+  "rgba(213, 63, 140, 1)",
+  "var(--chakra-colors-teal-400)",
+  "rgba(180, 197, 255, 1)",
+  "rgba(135, 162, 250, 1)",
+  "var(--chakra-colors-green-400)",
+  "var(--chakra-colors-red-400)",
+  "var(--chakra-colors-cyan-400)",
+  "var(--chakra-colors-gray-400)",
+  "var(--chakra-colors-pink-400)",
+  "var(--chakra-colors-blue-400)",
+];
+
+export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({
+  items,
+  pieItems,
+}) => {
+  const allKeys = useMemo(
+    () =>
+      LINQ.from(items)
+        .selectMany((item) => Object.keys(item))
+        .distinct()
+        .filter((m) => m !== "month"),
+    [items]
+  );
   const xInterval = useBreakpointValue({ base: 5, md: 5, xl: 0 });
   const yTickMargin = useBreakpointValue({ base: 50, md: -5 });
   const yFontSize = useBreakpointValue({ base: 7, md: 12 });
@@ -56,7 +74,7 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
   return (
     <>
       <Box width="100%" mb={{ base: "40px!important" }}>
-        <Pies />
+        <Pies items={pieItems} />
       </Box>
       <Box
         width={{ xl: "1170px", md: "620px", base: "343px" }}
@@ -98,95 +116,18 @@ export const TokenomicGraph: React.FC<TokenomicGraphProps> = ({ items }) => {
               tickFormatter={(value: number) => value.toLocaleString()}
             />
             <Tooltip content={<CustomTooltip />} />
-            <Area
-              type="linear"
-              dataKey="Pre-sale"
-              stackId="1"
-              yAxisId="left"
-              label="Pre-sale"
-              stroke="rgba(90, 134, 240, 1)"
-              fill="rgba(90, 134, 240, 1)"
-            />
-            <Area
-              type="linear"
-              dataKey="NFT Launchpad"
-              stackId="1"
-              yAxisId="left"
-              stroke="rgba(213, 63, 140, 1)"
-              fill="rgba(213, 63, 140, 1)"
-            />
-            <Area
-              type="linear"
-              dataKey="Pre-farming"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-teal-400)"
-              fill="var(--chakra-colors-teal-400)"
-            />
-            <Area
-              type="linear"
-              dataKey="Liquidity"
-              stackId="1"
-              yAxisId="left"
-              stroke="rgba(180, 197, 255, 1)"
-              fill="rgba(180, 197, 255, 1)"
-            />
-            <Area
-              type="linear"
-              dataKey="Marketing"
-              stackId="1"
-              yAxisId="left"
-              stroke="rgba(135, 162, 250, 1)"
-              fill="rgba(135, 162, 250, 1)"
-            />
-            <Area
-              type="linear"
-              dataKey="Game ecosystem"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-green-400)"
-              fill="var(--chakra-colors-green-400)"
-            />
-            <Area
-              type="linear"
-              dataKey="Partners & Advisors"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-red-400)"
-              fill="var(--chakra-colors-red-400)"
-            />
-            <Area
-              type="linear"
-              dataKey="Team"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-cyan-400)"
-              fill="var(--chakra-colors-cyan-400)"
-            />
-            <Area
-              type="linear"
-              dataKey="Bounty"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-gray-400)"
-              fill="var(--chakra-colors-gray-400)"
-            />
-            <Area
-              type="linear"
-              dataKey="Reserve"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-pink-400)"
-              fill="var(--chakra-colors-pink-400)"
-            />
-            <Area
-              type="linear"
-              dataKey="Ambassador program"
-              stackId="1"
-              yAxisId="left"
-              stroke="var(--chakra-colors-blue-400)"
-              fill="var(--chakra-colors-blue-400)"
-            />
+            {allKeys.map((key, index) => (
+              <Area
+                key={key}
+                type="linear"
+                dataKey={key}
+                stackId="1"
+                yAxisId="left"
+                label={key}
+                stroke={colors[index]}
+                fill={colors[index]}
+              />
+            ))}
           </AreaChart>
         </ResponsiveContainer>
       </Box>

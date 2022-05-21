@@ -1,6 +1,6 @@
 import { Box, Img, SimpleGrid, VStack, Text } from "@chakra-ui/react";
 
-interface PieProps {
+export interface PieProps {
   img: string;
   title: string;
   description: string;
@@ -35,40 +35,11 @@ export const Pie: React.FC<PieProps> = ({ img, title, description }) => {
   );
 };
 
-export const Pies = () => {
-  const items: PieProps[] = [
-    {
-      img: "/tokenomic/marketing.svg",
-      title: "Marketing",
-      description: "30% — 1,500,000,000",
-    },
-    {
-      img: "/tokenomic/team.svg",
-      title: "Team",
-      description: "30% — 1,500,000,000",
-    },
-    {
-      img: "/tokenomic/partners.svg",
-      title: "Partners",
-      description: "30% — 1,500,000,000",
-    },
-    {
-      img: "/tokenomic/public-sale.svg",
-      title: "Public Sale",
-      description: "30% — 1,500,000,000",
-    },
-    {
-      img: "/tokenomic/staking.svg",
-      title: "Staking",
-      description: "30% — 1,500,000,000",
-    },
-    {
-      img: "/tokenomic/mining.svg",
-      title: "Mining",
-      description: "30% — 1,500,000,000",
-    },
-  ];
+export interface PiesProps {
+  items: PieProps[];
+}
 
+export const Pies: React.FC<PiesProps> = ({ items }) => {
   return (
     <SimpleGrid
       columns={{ base: 3 }}

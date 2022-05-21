@@ -1,7 +1,7 @@
 import { Container, Box, Heading, Text, Img, VStack } from "@chakra-ui/react";
 import { TokenomicGraph } from "components/tokenomic-graph";
 
-import data from "./data.json";
+import dataJson from "./data.json";
 
 export const KarmaTokenomic = () => {
   return (
@@ -30,7 +30,10 @@ export const KarmaTokenomic = () => {
             &nbsp;Distribution
           </Heading>
 
-          <TokenomicGraph items={data} />
+          <TokenomicGraph
+            items={dataJson["data"]}
+            pieItems={dataJson["pies"]}
+          />
         </VStack>
       </Container>
     </Box>
