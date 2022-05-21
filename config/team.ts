@@ -39,7 +39,7 @@ export const KhanMinur = {
   photo: "/khan-minur.png",
   role: "Business Development",
   description:
-    "Development of processes for business. Extensive knowledge in the field of building business processes and marketing promotion of crypto projects",
+    "Development of processes for business. Founder of a affiliate marketing agency, built business processes in more than 4 operating companies from a music label to a vending company",
 };
 
 export const VadimGill = {
