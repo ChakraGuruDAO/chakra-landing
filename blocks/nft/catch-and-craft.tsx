@@ -46,7 +46,13 @@ export const CatchCraft = () => {
             fontSize={{ xl: "64px", md: "40px", base: "28px" }}
             lineHeight="120%"
           >
-            CATCHING AND CRAFT
+            <Text as="span" color="brand.100">
+              Minting
+            </Text>{" "}
+            &{" "}
+            <Text as="span" color="pink.100">
+              Crafting
+            </Text>
           </Heading>
           <Text
             color="white"
@@ -55,8 +61,9 @@ export const CatchCraft = () => {
             lineHeight="150%"
             mb="24px!important"
           >
-            While modifying the metaverse with the Karma dApp, hunt for rare
-            ar-nft characters and keep moving 2 earn
+            Move-and-Go and collect Meta-Objects. They are located all over the
+            world. With your camera, you can catch and craft it for your
+            Collection.
           </Text>
           <Text
             color="white"
@@ -65,8 +72,12 @@ export const CatchCraft = () => {
             lineHeight="150%"
             mb="24px!important"
           >
-            While modifying the metaverse with the Karma dApp, hunt for rare
-            ar-nft characters and keep moving 2 earn
+            Explore your world in a new way, find hidden heroes and then sell
+            them on the market. Upgrade your characters, their weapons and
+            skills. It is available with the help of{" "}
+            <Text as="span" color="pink.500">
+              Augmented Reality (AR) technology
+            </Text>
           </Text>
           <Box display={{ base: "none", lg: "flex" }} flexDirection="column">
             {/* <Text

@@ -46,64 +46,35 @@ export const Features: React.FC<FeaturesProps> = ({}) => {
               primary
               title="Game"
               flexGrow={1}
-              description="Targeted meta-stations with the function of generating and distributing content and the ability to customize the interaction."
+              description="Through games, we invoke the natural inclinations of users to compete, collaborate, and achieve to immerse themselves in the Metaverse."
             />
             <FeatureCard
               title="Commerce"
               flexGrow={1}
-              description="Targeted meta-stations with the function of generating and distributing content and the ability to customize the interaction."
+              description="Targeted Meta-Stations with the function of generating and distributing Content and the ability to customize the interaction."
             />
           </Stack>
           <Stack
             flexDirection={{ xl: "row", md: "column", base: "column" }}
             gap={{ xl: "30px", md: "20px", base: "12px" }}
+            spacing={{ base: 0 }}
             mt={{ md: "0!important" }}
           >
             <FeatureCard
               title="Creator"
-              description="Create content for the metaverse and get a percentage of the distribution received for non-profits."
+              description="Create content to the Metaverse and get a percent of the released fees and taxes."
             />
             <FeatureCard
               title="Investor"
-              description="By purchasing zones in the metaverse, you receive commissions for activities in your territory"
+              description="Buy a Zone in the Metaverse and earn income rewards for providing"
             />
 
             <FeatureCard
               title="Ambassador"
-              description="We will discuss responsibilities and financial incentives with each potential ambassador"
+              description="Convenient social system for managing communities - Connect-to-Earn"
             />
           </Stack>
         </Stack>
-        {/* <VStack
-          spacing={{ xl: "30px", md: "30px" }}
-          flexDirection={{ xl: "column", md: "row" }}
-        >
-          <SimpleGrid columns={{ xl: 2, md: 1 }} autoRows spacing="30px">
-            <FeatureCard
-              primary
-              title="Game"
-              description="Targeted meta-stations with the function of generating and distributing content and the ability to customize the interaction."
-            />
-            <FeatureCard
-              title="Commerce"
-              description="Targeted meta-stations with the function of generating and distributing content and the ability to customize the interaction."
-            />
-          </SimpleGrid>
-          <SimpleGrid columns={{ xl: 3, md: 1 }} spacing="30px">
-            <FeatureCard
-              title="Creator"
-              description="Create content for the metaverse and get a percentage of the distribution received for non-profits."
-            />
-            <FeatureCard
-              title="Investor"
-              description="By purchasing zones in the metaverse, you receive commissions for activities in your territory"
-            />
-            <FeatureCard
-              title="Ambassador"
-              description="We will discuss responsibilities and financial incentives with each potential ambassador"
-            />
-          </SimpleGrid>
-        </VStack> */}
       </Container>
     </Box>
   );

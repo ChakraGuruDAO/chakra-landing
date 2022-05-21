@@ -32,7 +32,7 @@ export const Token = () => {
           >
             <CoinLabel
               position={{ base: "absolute" }}
-              value="If you want to earn with the #karma token, you can do it on the exchange"
+              value="Utility Meta-Ecosystem token. Heart of the Metaverse."
               color="brand.100"
               bottom="0"
               left="0"
@@ -42,7 +42,7 @@ export const Token = () => {
               position={{ base: "absolute" }}
               top="0"
               right="0"
-              value="If you want to earn with the #karma token, you can do it on the exchange"
+              value="Utility Game-Ecosystem token. Mechanism for the gamification of Metaverse processes to engage users."
               color="pink.100"
             />
           </Box>

@@ -21,8 +21,10 @@ export const CompeteWin = () => {
       <Container
         display="flex"
         justifyContent={{ xl: "flex-end", base: "flex-start" }}
-        alignItems={{ md: "center", base: "flex-start" }}
-        height={{ xl: "800px", base: "700px" }}
+        pt={{ base: 0, xl: 20 }}
+        alignItems={{ base: "flex-start" }}
+        height={{ base: "700px", xl: "800px" }}
+        textAlign="left"
       >
         <Boys
           position="absolute"
@@ -36,45 +38,64 @@ export const CompeteWin = () => {
         />
 
         <VStack
-          maxWidth={{ base: "370px" }}
+          maxWidth={{ base: "430px", xl: "530px" }}
           justifySelf={{ base: "flex-start", md: "center" }}
-          // position={{ base: "absolute" }}
-          // top={{ base: "50%" }}
-          // transform={{ base: "translateY(-50%)" }}
           zIndex="overlay"
-          alignItems="flex-start"
-          // background="blackAlpha.600"
-          // borderRadius="20px"
-          // p="16px"
+          gap={{ lg: 1 }}
+          alignItems={{ xl: "flex-start" }}
+          color={{ xl: "teal.300", base: "brand.100" }}
+          px={12}
+          py={8}
+          position="relative"
+          transition="all 0.25s ease 0s"
+          boxShadow={`var(--chakra-colors-blue-800) 0 0 1px`}
+          _hover={{
+            boxShadow: `var(--chakra-colors-blue-800) 0 0 var(--chakra-sizes-8)`,
+          }}
+          borderRadius={12}
         >
+          <Box
+            position="absolute"
+            top={0}
+            bottom={0}
+            left={0}
+            right={0}
+            bg="blue.900"
+            borderRadius={12}
+            border="1px solid "
+            opacity="0.8"
+          />
           <Heading
-            color={{ xl: "white", base: "brand.100" }}
             textTransform="uppercase"
-            mt={{ base: "64px", md: 0 }}
+            mt={{ base: 32, md: 0 }}
             fontWeight={500}
             fontSize={{ xl: "64px", md: "46px", base: "26px" }}
             lineHeight="120%"
+            zIndex={1000}
+            filter="blur(0.1px)"
           >
-            COMPETE AND WIN
+            Fight to win
           </Heading>
           <Text
-            color="white"
             fontWeight={300}
             fontSize={{ xl: "20px", base: "16px" }}
             lineHeight="150%"
-            mb="24px!important"
+            color={{ base: "blue.100" }}
+            filter="blur(0.1px)"
           >
-            While modifying the metaverse with the Karma dApp, hunt for rare
-            ar-nft characters and keep moving 2 earn
+            Immersion in the ecosystem goes through Game-Fi mechanisms. Fight
+            and defeat other players. Join clans and take part in quests.
           </Text>
           <Text
-            color="white"
             fontWeight={300}
             fontSize={{ xl: "20px", base: "16px" }}
             lineHeight="150%"
+            color={{ base: "blue.100" }}
+            filter="blur(0.1px)"
           >
-            While modifying the metaverse with the Karma dApp, hunt for rare
-            ar-nft characters and keep moving 2 earn
+            KARMA includes several fight modes PvP and PvE. Players use the own
+            collection of Game-elements with their own characteristics and
+            abilities.
           </Text>
         </VStack>
       </Container>

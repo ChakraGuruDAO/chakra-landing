@@ -17,7 +17,7 @@ export const TimerPart: React.FC<TimerPartProps> = ({ title, value }) => {
     () => (value >= 0 && value <= 9 ? `0${value}` : value),
     [value]
   );
-  const borderColor = useColorModeValue("blue.200", "blue.300");
+  const borderColor = useColorModeValue("brand.100", "brand.100");
 
   return (
     <VStack spacing={{ base: 4 }}>
@@ -29,6 +29,7 @@ export const TimerPart: React.FC<TimerPartProps> = ({ title, value }) => {
         justifyContent="center"
         borderWidth={2}
         borderColor={borderColor}
+        textColor={borderColor}
         borderRadius={{ base: "12px", md: "12px", xl: "20px" }}
         textAlign="center"
       >

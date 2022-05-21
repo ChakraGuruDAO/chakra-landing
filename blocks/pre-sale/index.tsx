@@ -51,8 +51,27 @@ export const PreSale = () => {
                 base: "20px!important",
               }}
             >
-              The CHAKRA DAO offers two core pools. Variable locking for up to
-              twelve months is available for MC and LP staking.
+              KARMA is a cross-platform collectible card game based on augmented
+              reality (AR) technology. She uses mobile devices with GPS to find,
+              catch, upgrade and fight virtual characters. They look like they
+              are in the player&apos;s real world.
+            </Text>
+
+            <Text
+              textAlign={{ base: "center", md: "left" }}
+              fontSize={{ xl: "20px", md: "16px" }}
+              fontWeight={300}
+              color="black"
+              mb={{
+                xl: "20px!important",
+                md: "20px!important",
+                base: "20px!important",
+              }}
+            >
+              KARMA Token is Game-Ecosystem utility token in Chakra Guru DAO.
+              Participate in the Pre Sale. You can purchase KARMA tokens as an
+              early adopter of our project Chakra Guru DAO. The receipt of the
+              tokens will be claimed out according to the unlock map.
             </Text>
             <Timer expireOn={saleStartAt} />
             {/* <PreSaleTimer
@@ -60,17 +79,19 @@ export const PreSale = () => {
               expireOn={dayjs().add(1, "months").toDate()}
             /> */}
           </VStack>
-          <TickerBlock
-            tokenName={tokenName}
-            tokenSymbol={tokenSymbol}
-            saleStartAt={saleStartAt}
-            saleEndAt={saleEndAt}
-            tokenPrice={tokenPrice}
-            fromSymbol={fromSymbol}
-            softCapToken={softCapToken}
-            hardCapToken={hardCapToken}
-            saleUrl={saleUrl}
-          />
+          <Box>
+            <TickerBlock
+              tokenName={tokenName}
+              tokenSymbol={tokenSymbol}
+              saleStartAt={saleStartAt}
+              saleEndAt={saleEndAt}
+              tokenPrice={tokenPrice}
+              fromSymbol={fromSymbol}
+              softCapToken={softCapToken}
+              hardCapToken={hardCapToken}
+              saleUrl={saleUrl}
+            />
+          </Box>
         </SimpleGrid>
       </Container>
     </Box>

@@ -1,4 +1,4 @@
-import { Box, Button, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { saleUrl } from "config/links";
 
 export interface DAOCardProps {}
@@ -37,31 +37,38 @@ export const DAOCard: React.FC<DAOCardProps> = () => {
           md: 2,
         }}
       >
-        <VStack
+        <Flex
+          flexDirection="column"
           textAlign="center"
+          justifyContent="center"
+          gap={{ base: 6, md: 2, lg: 6 }}
           alignSelf={{ base: "flex-start", md: undefined }}
         >
           <Text
             color="white"
             fontSize={{ xl: "64px", md: "32px", base: "28px" }}
             fontWeight={500}
+            lineHeight={{ xl: "64px", md: "32px", base: "28px" }}
           >
             DAO
           </Text>
+
           <Text
             color="white"
             fontWeight={300}
             fontSize={{ xl: "20px", base: "16px" }}
-            marginBottom={{ xl: "50px", base: "0px" }}
           >
-            Through ownership and rewarding merit, metaverse are now governed by
-            the players. Innovative MetaFi economics reward avatars for their
-            action.
+            We are creating the Next Generation of the digital world, where
+            everyone can be part of a decentralized autonomous organization
+            (DAO) based on rules and standards.
           </Text>
-          <Button as="a" href={saleUrl} variant="white">
-            Join the pre-sale
-          </Button>
-        </VStack>
+
+          <Box>
+            <Button as="a" href={saleUrl} variant="white">
+              Join the pre-sale
+            </Button>
+          </Box>
+        </Flex>
       </SimpleGrid>
     </Box>
   );

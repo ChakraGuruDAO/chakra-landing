@@ -38,6 +38,7 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({
       px={{ md: "35px", base: "24px" }}
       py={{ md: "50px", base: "24px" }}
       textAlign="center"
+      mt={0}
       {...props}
     >
       <VStack>

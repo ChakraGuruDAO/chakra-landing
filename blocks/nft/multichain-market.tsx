@@ -35,11 +35,13 @@ export const MultichainMarket = () => {
             fontWeight={300}
             lineHeight="150%"
             fontSize={{ xl: "20px", base: "16px" }}
-            maxW={{ base: "367px" }}
+            maxW={{ base: "467px" }}
             mb="24px!important"
           >
-            While modifying the metaverse with the Karma dApp, hunt for rare
-            ar-nft characters and keep moving 2 earn
+            Since everything is built on standards, all objects can easily
+            interact with external applications. All Meta-Objects are special
+            NFT. You can transfer and trade it on various DEX and NFT
+            marketplaces.
           </Text>
           <Text
             color="white"
@@ -49,11 +51,12 @@ export const MultichainMarket = () => {
             maxW={{ base: "367px" }}
             mb="24px!important"
           >
-            While modifying the metaverse with the Karma dApp, hunt for rare
-            ar-nft characters and keep moving 2 earn
+            The project will also support multi-chain networks. Our tokens will
+            be easy transferred across networks using Blockchain Bridges.
+            Metaverse will support various blockchain solutions dynamically
           </Text>
         </VStack>
-        <Img src="/multi-chain.png" width={{ base: "100%", md: "45%" }} />
+        <Img src="/multi-chain.svg" width={{ base: "100%", md: "45%" }} />
       </Container>
     </Box>
   );
