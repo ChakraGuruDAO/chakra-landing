@@ -113,7 +113,7 @@ export const CatchCraft = () => {
             rel="ar"
             colorScheme="pink"
             display={{ base: "block", lg: "none" }}
-            href="/Hex_Witcher.usdz"
+            href="/model.usdz"
           >
             TRY IT NOW
           </Button>
