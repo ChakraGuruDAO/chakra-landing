@@ -45,6 +45,7 @@ export const Pies: React.FC<PiesProps> = ({ items }) => {
       columns={{ base: 3 }}
       spacing={{ base: "16px", md: "20px", lg: "30px" }}
       width="100%"
+      textAlign="center"
     >
       {items.map((item, id) => (
         <Pie key={id} {...item} />
