@@ -65,7 +65,7 @@ export const WysiWyg = {
     `,
 };
 export const IskanderUsman = {
-  name: "Iskander Usman",
+  name: "Iskander Usmanov",
   site: null,
   twitter: null,
   photo: "/iskander-usman.png",
