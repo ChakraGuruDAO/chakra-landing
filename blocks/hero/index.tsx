@@ -44,7 +44,7 @@ export const Hero = () => {
         alignItems="space-between"
         maxWidth={{ base: "350px", md: "620px", lg: "960px", xl: "1170px" }}
       >
-        <Box pt={{ base: "20px" }}>
+        <Box pt={{ base: 10 }}>
           <HeaderBlock
             rootUrl={rootUrl}
             mediumUrl={mediumUrl}
