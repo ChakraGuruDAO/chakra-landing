@@ -328,3 +328,4 @@
     return e.default;
   })();
 });
+//# sourceMappingURL=sketchfab-viewer-1.12.0.js.map
