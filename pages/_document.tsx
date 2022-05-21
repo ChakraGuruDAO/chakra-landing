@@ -1,5 +1,6 @@
 import { ColorModeScript } from "@chakra-ui/react";
 import { Favicon } from "components/favicon";
+import { Metadata } from "components/metadata";
 import NextDocument, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
@@ -11,8 +12,8 @@ export default class Document extends NextDocument {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <title>Chakra Guru DAO - AR Metaverse</title>
           <Favicon />
+          <Metadata />
           <link rel="stylesheet" href="/global.css" />
           <script
             type="text/javascript"
