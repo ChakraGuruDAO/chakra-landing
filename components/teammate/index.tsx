@@ -1,13 +1,13 @@
 import { Box, Circle, HStack, Img, Text, Link, VStack } from "@chakra-ui/react";
-import { TwitterIcon, TelegramIcon } from "components/icons";
+import { FaTwitter, FaExternalLinkAlt } from "react-icons/fa";
 
 export interface TeammateProps {
   name: string;
   position: string;
   description: string;
-  twitter: string;
-  telegram: string;
   photo: string;
+  site?: string;
+  twitter?: string;
 }
 
 export const Teammate: React.FC<TeammateProps> = ({
@@ -15,8 +15,8 @@ export const Teammate: React.FC<TeammateProps> = ({
   name,
   position,
   description,
+  site,
   twitter,
-  telegram,
 }) => {
   return (
     <Box>
@@ -28,16 +28,8 @@ export const Teammate: React.FC<TeammateProps> = ({
           bottom="-16px"
           right="16px"
         >
-          <Link href={twitter}>
-            <Circle bg="brand.100" size="32px">
-              <TwitterIcon boxSize="12px" color="white" />
-            </Circle>
-          </Link>
-          <Link href={telegram}>
-            <Circle bg="brand.100" size="32px">
-              <TelegramIcon boxSize="12px" color="white" />
-            </Circle>
-          </Link>
+          <SocialItem url={site} type="site" />
+          <SocialItem url={twitter} type="twitter" />
         </HStack>
       </Box>
       <VStack alignItems="flex-start">
@@ -65,4 +57,18 @@ export const Teammate: React.FC<TeammateProps> = ({
       </VStack>
     </Box>
   );
+};
+
+const SocialItem: React.FC<{ url: string; type: "twitter" | "site" }> = ({
+  url,
+  type,
+}) => {
+  return url ? (
+    <Link key={url} href={url}>
+      <Circle bg="brand.100" size={10}>
+        {type === "twitter" && <FaTwitter size={16} color="white" />}
+        {type === "site" && <FaExternalLinkAlt size={16} color="white" />}
+      </Circle>
+    </Link>
+  ) : null;
 };

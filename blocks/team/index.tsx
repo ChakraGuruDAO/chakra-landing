@@ -1,18 +1,27 @@
 import { Box, Container, SimpleGrid, Text } from "@chakra-ui/react";
 import { CEO } from "components/ceo";
 import { Teammate } from "components/teammate";
+import {
+  ArinaKanivets,
+  IskanderUsman,
+  KhanMinur,
+  RavilBerish,
+  VadimGill,
+  WysiWyg,
+  YanShevchenco,
+} from "config/team";
 
 export const Team = () => {
   return (
     <Box bg="dark.100" py={{ base: "50px", md: "100px" }}>
       <Container>
         <CEO
-          name="Ravil Berish"
-          position="CEO/Founder"
-          twitter="#"
-          telegram="#"
-          photo="/ravil-ceo.png"
-          description="Behind the scenes there are more than 20 game designers, game/blockchain developers and marketers.Behind the scenes there are more than 20 game designers, game/blockchain developers and marketers."
+          name={RavilBerish.name}
+          position={RavilBerish.role}
+          site={RavilBerish.site}
+          twitter={RavilBerish.twitter}
+          photo={RavilBerish.photo}
+          description={RavilBerish.description}
         />
         <Text
           color="white"
@@ -27,38 +36,24 @@ export const Team = () => {
           columns={{ xl: 4, md: 3, base: 2 }}
           spacing={{ xl: "30px", md: "20px", base: "16px" }}
         >
-          <Teammate
-            name="Yan Shevchenco"
-            position="Chif Game Office"
-            twitter="#"
-            telegram="#"
-            photo="/yan-shevchenco.png"
-            description="Game Designer, developer games and projects, founder and CEO of GD Forge and Fair Games"
-          />
-          <Teammate
-            name="Arina Kanivets"
-            position="UI/UX designer"
-            twitter="#"
-            telegram="#"
-            photo="/arina-kanivets.png"
-            description="Web/mobile designer, international market experience and team building"
-          />
-          <Teammate
-            name="Khan Minur"
-            position="Business Developer"
-            twitter="#"
-            telegram="#"
-            photo="/khan-minur.png"
-            description="Developered processes in business and between them.  "
-          />
-          <Teammate
-            name="Vadim Gill"
-            position="CTO"
-            twitter="#"
-            telegram="#"
-            photo="/vadim-gill.png"
-            description="Artificial intelligence creator,"
-          />
+          {[
+            YanShevchenco,
+            ArinaKanivets,
+            KhanMinur,
+            VadimGill,
+            IskanderUsman,
+            WysiWyg,
+          ].map(({ name, role, site, twitter, photo, description }) => (
+            <Teammate
+              key={name}
+              name={name}
+              position={role}
+              site={site}
+              twitter={twitter}
+              photo={photo}
+              description={description}
+            />
+          ))}
         </SimpleGrid>
       </Container>
     </Box>
