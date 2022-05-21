@@ -72,7 +72,7 @@ export const CompeteWin = () => {
             fontSize={{ xl: "64px", md: "46px", base: "26px" }}
             lineHeight="120%"
             zIndex={1000}
-            filter={{ lg: "blur(0.1px)" }}
+            filter={{ xl: "blur(0.1px)" }}
           >
             Fight to win
           </Heading>
@@ -82,7 +82,7 @@ export const CompeteWin = () => {
             lineHeight="150%"
             zIndex={1000}
             color={{ base: "blue.100" }}
-            filter={{ lg: "blur(0.1px)" }}
+            filter={{ xl: "blur(0.1px)" }}
           >
             Immersion in the ecosystem goes through Game-Fi mechanisms. Fight
             and defeat other players. Join clans and take part in quests.
@@ -93,7 +93,7 @@ export const CompeteWin = () => {
             lineHeight="150%"
             zIndex={1000}
             color={{ base: "blue.100" }}
-            filter={{ lg: "blur(0.1px)" }}
+            filter={{ xl: "blur(0.1px)" }}
           >
             KARMA includes several fight modes PvP and PvE. Players use the own
             collection of Game-elements with their own characteristics and
