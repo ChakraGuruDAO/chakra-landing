@@ -80,8 +80,6 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const offset = useBreakpointValue({ base: 40, md: 70, lg: 80 });
-  const [scrollFactor, setScrollFactor] = useState(0);
-  const [scale, setScale] = useState(0);
   const [activeLineHeight, setActiveLineHeight] = useState(0);
   const [currentScroll, setCurrentScroll] = useState(0);
 
@@ -97,7 +95,6 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
       if (scrollY >= offsetTop && scrollY <= maxScroll) {
         const scrollDelta = scrollY - offsetTop;
         const scrollFactor = scrollDelta / maxHeight;
-        setScrollFactor(scrollFactor);
         setCurrentScroll(scrollY);
         setActiveLineHeight(scrollFactor * maxHeight + 80);
       } else {
@@ -113,12 +110,10 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
     return () => window.removeEventListener("scroll", handlePageScroll);
   }, [handlePageScroll]);
 
-  // console.log({ offsetTop });
-
   return (
     <VStack
       position="relative"
-      maxW={{ xl: "80%", md: "100%", base: "100%" }}
+      maxW={{ base: "100%" }}
       margin="0 auto"
       gap={{ base: "65px", md: undefined }}
       ref={ref}
@@ -156,7 +151,7 @@ export const RoadmapComponent: React.FC<RoadmapComponentProps> = ({
               bg="black"
               borderRadius="20px"
               p="20px"
-              maxW={{ xl: "330px", md: "264px", base: "100%" }}
+              maxW={{ base: "100%", md: 250, xl: 500 }}
               w={{ base: "100%", md: undefined }}
             >
               <Text
