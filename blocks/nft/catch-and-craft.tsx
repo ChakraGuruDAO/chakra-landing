@@ -33,6 +33,7 @@ export const CatchCraft = () => {
         <VStack
           alignItems="flex-start"
           maxWidth={{ xl: "370px", md: "270px", base: "100%" }}
+          textAlign={{ base: "center", md: "left" }}
           mb={{ base: "60px", md: 0 }}
         >
           <Heading
@@ -67,7 +68,7 @@ export const CatchCraft = () => {
             While modifying the metaverse with the Karma dApp, hunt for rare
             ar-nft characters and keep moving 2 earn
           </Text>
-          <Box display={{ base: "none", md: "flex" }} flexDirection="column">
+          <Box display={{ base: "none", lg: "flex" }} flexDirection="column">
             {/* <Text
               fontSize={{ base: "20px" }}
               color="brand.100"
@@ -80,27 +81,30 @@ export const CatchCraft = () => {
               <Img src="/qrcode.svg" boxSize={{ base: "100px" }} />
               <HStack
                 color="brand.200"
-                minW={60}
+                minW={{ base: 20, lg: 60 }}
                 justifyContent="space-between"
-                pl={10}
+                pl={4}
               >
                 <FaArrowLeft size={32} color="var(--chakra-colors-brand-200)" />
-                <Text fontSize="2xl" fontWeight="black">
+                <Text
+                  fontSize={{ base: "large", lg: "2xl" }}
+                  fontWeight="black"
+                >
                   TRY IT NOW
                 </Text>
               </HStack>
             </HStack>
           </Box>
 
-          {/* <Button
+          <Button
             alignSelf={{ base: "center", lg: "flex-start" }}
             as="a"
             colorScheme="pink"
-            display={{ base: "block", md: "none" }}
+            display={{ base: "block", lg: "none" }}
             href="/Hex_Witcher.usdz"
           >
-            Try a meta-verse
-          </Button> */}
+            TRY IT NOW
+          </Button>
         </VStack>
         <VStack
           w={{ xl: "346px", md: "300px", base: "250px" }}
