@@ -12,7 +12,15 @@ import {
   useBreakpointValue,
   VStack,
 } from "@chakra-ui/react";
-import { FaTwitter, FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaExternalLinkAlt,
+  FaFacebook,
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedin,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import { TelegramIcon, TwitterIcon } from "components/icons";
 
 export interface CEOProps {
@@ -20,6 +28,9 @@ export interface CEOProps {
   position: string;
   description: string;
   site: string;
+  linkedin: string;
+  facebook: string;
+  instagram: string;
   twitter: string;
   photo: string;
 }
@@ -29,7 +40,10 @@ export const CEO: React.FC<CEOProps> = ({
   name,
   position,
   site,
+  linkedin,
   twitter,
+  facebook,
+  instagram,
   description,
 }) => {
   const blockDescription = useBreakpointValue({ base: true, md: false });
@@ -73,13 +87,11 @@ export const CEO: React.FC<CEOProps> = ({
                 {position}
               </Text>
               <HStack spacing={{ base: "12px", md: "12px" }}>
-                <SocialItem url={site} type="site" />
                 <SocialItem url={twitter} type="twitter" />
-                {/* <Link href={twitter}>
-                  <Circle bg="brand.100" size={9}>
-                    <TwitterIcon boxSize={4} color="white" />
-                  </Circle>
-                </Link> */}
+                <SocialItem url={facebook} type="facebook" />
+                <SocialItem url={instagram} type="instagram" />
+                <SocialItem url={linkedin} type="linkedin" />
+                <SocialItem url={site} type="site" />
               </HStack>
             </HStack>
             {!blockDescription && (
@@ -109,15 +121,18 @@ export const CEO: React.FC<CEOProps> = ({
   );
 };
 
-const SocialItem: React.FC<{ url: string; type: "twitter" | "site" }> = ({
-  url,
-  type,
-}) => {
+const SocialItem: React.FC<{
+  url: string;
+  type: "twitter" | "site" | "instagram" | "facebook" | "linkedin";
+}> = ({ url, type }) => {
   return url ? (
     <Link key={url} href={url}>
-      <Circle bg="brand.100" size={10}>
+      <Circle bg="brand.100" size={8}>
         {type === "twitter" && <FaTwitter size={16} color="white" />}
+        {type === "facebook" && <FaFacebookF size={16} color="white" />}
+        {type === "instagram" && <FaInstagram size={16} color="white" />}
         {type === "site" && <FaExternalLinkAlt size={16} color="white" />}
+        {type === "linkedin" && <FaLinkedinIn size={16} color="white" />}
       </Circle>
     </Link>
   ) : null;

@@ -19,6 +19,9 @@ export const Team = () => {
           name={RavilBerish.name}
           position={RavilBerish.role}
           site={RavilBerish.site}
+          linkedin={RavilBerish.linkedin}
+          facebook={RavilBerish.facebook}
+          instagram={RavilBerish.instagram}
           twitter={RavilBerish.twitter}
           photo={RavilBerish.photo}
           description={RavilBerish.description}

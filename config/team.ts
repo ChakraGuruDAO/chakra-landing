@@ -1,6 +1,9 @@
 export const RavilBerish = {
   name: "Ravil Berish",
   site: null,
+  facebook: "https://www.facebook.com/berish.ceo",
+  instagram: "https://www.instagram.com/berish_ceo/",
+  linkedin: "https://www.linkedin.com/in/berish-ceo/",
   twitter: "https://twitter.com/berish_ravil",
   photo: "/ravil-ceo.png",
   role: "Founder & CEO",
