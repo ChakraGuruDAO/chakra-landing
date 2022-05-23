@@ -5,6 +5,7 @@ export const RavilBerish = {
   instagram: "https://www.instagram.com/berish_ceo/",
   linkedin: "https://www.linkedin.com/in/berish-ceo/",
   twitter: "https://twitter.com/berish_ravil",
+  github: "https://github.com/berish-ceo",
   photo: "/ravil-ceo.png",
   role: "Founder & CEO",
   description: `Entrepreneur, IT-Guru, open-source developer and crypto enthusiast. 

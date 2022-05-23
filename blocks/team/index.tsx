@@ -22,6 +22,7 @@ export const Team = () => {
           linkedin={RavilBerish.linkedin}
           facebook={RavilBerish.facebook}
           instagram={RavilBerish.instagram}
+          github={RavilBerish.github}
           twitter={RavilBerish.twitter}
           photo={RavilBerish.photo}
           description={RavilBerish.description}

@@ -20,6 +20,7 @@ import {
   FaFacebookF,
   FaLinkedin,
   FaLinkedinIn,
+  FaGithub,
 } from "react-icons/fa";
 import { TelegramIcon, TwitterIcon } from "components/icons";
 
@@ -32,6 +33,7 @@ export interface CEOProps {
   facebook: string;
   instagram: string;
   twitter: string;
+  github: string;
   photo: string;
 }
 
@@ -42,6 +44,7 @@ export const CEO: React.FC<CEOProps> = ({
   site,
   linkedin,
   twitter,
+  github,
   facebook,
   instagram,
   description,
@@ -88,8 +91,9 @@ export const CEO: React.FC<CEOProps> = ({
               </Text>
               <HStack spacing={{ base: "12px", md: "12px" }}>
                 <SocialItem url={twitter} type="twitter" />
-                <SocialItem url={facebook} type="facebook" />
                 <SocialItem url={instagram} type="instagram" />
+                <SocialItem url={github} type="github" />
+                <SocialItem url={facebook} type="facebook" />
                 <SocialItem url={linkedin} type="linkedin" />
                 <SocialItem url={site} type="site" />
               </HStack>
@@ -123,12 +127,13 @@ export const CEO: React.FC<CEOProps> = ({
 
 const SocialItem: React.FC<{
   url: string;
-  type: "twitter" | "site" | "instagram" | "facebook" | "linkedin";
+  type: "twitter" | "site" | "instagram" | "facebook" | "linkedin" | "github";
 }> = ({ url, type }) => {
   return url ? (
     <Link key={url} href={url}>
       <Circle bg="brand.100" size={8}>
         {type === "twitter" && <FaTwitter size={16} color="white" />}
+        {type === "github" && <FaGithub size={16} color="white" />}
         {type === "facebook" && <FaFacebookF size={16} color="white" />}
         {type === "instagram" && <FaInstagram size={16} color="white" />}
         {type === "site" && <FaExternalLinkAlt size={16} color="white" />}
