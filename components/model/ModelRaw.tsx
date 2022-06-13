@@ -15,25 +15,25 @@ const ModelRaw: React.FC<PropsWithChildren<ModelProps>> = ({
   alt,
   children,
 }) => {
-  return (
-    <model-viewer
-      src={srcGLTF}
-      ios-src={srcUSDZ}
-      thumbnail={srcPoster}
-      enable-pan
-      alt={alt}
-      ar
-      ar-modes="scene-viewer webxr quick-look"
-      camera-controls
-      environment-image="neutral"
-      shadow-intensity="1"
-      autoplay
-      style={{
+  return React.createElement(
+    "model-viewer",
+    {
+      src: srcGLTF,
+      "ios-src": srcUSDZ,
+      thumbnail: srcPoster,
+      "enable-pan": true,
+      alt: alt,
+      ar: true,
+      "ar-modes": "scene-viewer webxr quick-look",
+      "camera-controls": true,
+      "environment-image": "neutral",
+      "shadow-intensity": "1",
+      autoplay: true,
+      style: {
         width: "100%",
-      }}
-    >
-      {children}
-    </model-viewer>
+      },
+    },
+    children
   );
 };
 
