@@ -6,7 +6,6 @@ import Image from "next/image";
 const ModelPage: NextPage = () => {
   return (
     <>
-      <Text>Model</Text>
       <Model
         srcGLTF="/model.gltf"
         srcUSDZ="/model.usdz"

@@ -6,6 +6,7 @@ import {
   IskanderUsman,
   KhanMinur,
   RavilBerish,
+  SaidDadaba,
   VadimGill,
   WysiWyg,
   YanShevchenco,
@@ -44,9 +45,10 @@ export const Team = () => {
             YanShevchenco,
             ArinaKanivets,
             KhanMinur,
-            VadimGill,
+            SaidDadaba,
             IskanderUsman,
             WysiWyg,
+            VadimGill,
           ].map(({ name, role, site, twitter, photo, description }) => (
             <Teammate
               key={name}

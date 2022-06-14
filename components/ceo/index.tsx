@@ -89,7 +89,7 @@ export const CEO: React.FC<CEOProps> = ({
               <Text color="brand.100" fontSize={{ base: 24 }}>
                 {position}
               </Text>
-              <HStack spacing={{ base: "12px", md: "12px" }}>
+              <HStack spacing={0} wrap="wrap" gap="10px">
                 <SocialItem url={twitter} type="twitter" />
                 <SocialItem url={instagram} type="instagram" />
                 <SocialItem url={github} type="github" />
