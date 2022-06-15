@@ -92,7 +92,7 @@ export const SaidDadaba = {
   name: "Said Dadaba",
   site: null,
   twitter: null,
-  photo: "/team/said-dadaba.png",
+  photo: "/team/said-pr.png",
   role: "Marketing & PR",
   description: `
     Project promotion and work with partners and media resources. 
