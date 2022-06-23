@@ -89,7 +89,7 @@ export const IskanderUsman = {
 };
 
 export const SaidDadaba = {
-  name: "Said Dadaba",
+  name: "Said Zokiri",
   site: null,
   twitter: null,
   photo: "/team/said-pr.png",
